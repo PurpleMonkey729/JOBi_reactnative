@@ -10,6 +10,16 @@ export const css = StyleSheet.create({
         height: '100%',
         minHeight: '100vh',
     },
+    cont2: {
+        width: 428,
+        paddingTop: 212,
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        fontFamily: 'Arial',
+        height: '100%',
+        minHeight: '100vh',
+        position: 'relative',
+    },
     btn_yellow: {
         width: 300,
         height: 52,

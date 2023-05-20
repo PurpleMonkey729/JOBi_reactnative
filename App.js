@@ -5,14 +5,17 @@ import { createStackNavigator } from '@react-navigation/stack';
 import IntroPage1 from './pages/intro/IntroPage1';
 import IntroPage2 from './pages/intro/IntroPage2';
 import IntroPage3 from './pages/intro/IntroPage3';
-import AuthIndexPage from './pages/auth/index';
-import LoginPage from './pages/auth/LoginPage';
-import RegistPage1 from './pages/auth/RegistPage1';
-import RegistPage2 from './pages/auth/RegistPage2';
-import RegistPage3 from './pages/auth/RegistPage3';
-import RegistPage4 from './pages/auth/RegistPage4';
-import RegistPage5 from './pages/auth/RegistPage5';
-import RegistEndPage from './pages/auth/RegistEndPage';
+
+import AuthIndexPage  from './pages/auth/index';
+import LoginPage      from './pages/auth/LoginPage';
+import RegistPage1    from './pages/auth/RegistPage1';
+import RegistPage2    from './pages/auth/RegistPage2';
+import RegistPage3    from './pages/auth/RegistPage3';
+import RegistPage4    from './pages/auth/RegistPage4';
+import RegistPage5    from './pages/auth/RegistPage5';
+import RegistEndPage  from './pages/auth/RegistEndPage';
+
+import LoadingPage    from './pages/main/LoadingPage';
 
 const Stack = createStackNavigator();
 
@@ -20,7 +23,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="RegistEndPage"
+        initialRouteName="LoadingPage"
         screenOptions={{
           headerShown: false
         }}>
@@ -35,6 +38,7 @@ export default function App() {
         <Stack.Screen name="RegistPage4" component={RegistPage4} />
         <Stack.Screen name="RegistPage5" component={RegistPage5} />
         <Stack.Screen name="RegistEndPage" component={RegistEndPage} />
+        <Stack.Screen name="LoadingPage" component={LoadingPage} />
       </Stack.Navigator>
     </NavigationContainer>
   );
