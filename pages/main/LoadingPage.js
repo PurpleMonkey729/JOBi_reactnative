@@ -106,7 +106,7 @@ console.log({...styles.circle, ...styles['circle0']});
 export default function LoadingPage(props) {
     const array = Array.from(Array(9).keys()).map(el=>'circle'+el);
     return (
-        <View style={css.cont2}>
+        <View style={css.cont_white_header}>
             <Header />
             <View style={styles.box}>
                 {array.map((item, index) =>

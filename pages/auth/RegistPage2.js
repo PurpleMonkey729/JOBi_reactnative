@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
 
 export default function RegistPage2(props) {
     return (
-        <View style={css.cont}>
+        <View style={css.cont_blue}>
             <Image source={img_logo} style={styles.img_logo} />
             <Text style={[css.ttl, styles.ttl]}>認証コード入力</Text>
             <Text style={[css.dsc, styles.dsc]}>電話番号に届いた認証コードを入力</Text>

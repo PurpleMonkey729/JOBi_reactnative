@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
 
 export default function AuthIndexPage(props) {
     return (
-        <View style={css.cont}>
+        <View style={css.cont_blue}>
             <Image source={img_logo} style={styles.img_logo} />
             <Image source={img_mid} style={styles.img_mid} />
             <Text style={[css.ttl, styles.ttl]}>JOBiへようこそ！</Text>

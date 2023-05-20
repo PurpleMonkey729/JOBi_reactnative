@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 
 export const css = StyleSheet.create({
-    cont: {
+    cont_blue: {
         width: 428,
         marginLeft: 'auto',
         marginRight: 'auto',
@@ -10,7 +10,7 @@ export const css = StyleSheet.create({
         height: '100%',
         minHeight: '100vh',
     },
-    cont2: {
+    cont_white_header: {
         width: 428,
         paddingTop: 212,
         marginLeft: 'auto',

@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
 
 export default function RegistPage4(props) {
     return (
-        <View style={css.cont}>
+        <View style={css.cont_blue}>
             <Image source={img_logo} style={styles.img_logo} />
             <Text style={styles.name}>木村さん</Text>
             <Image source={photo} style={styles.photo} />

@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
 
 export default function RegistPage1(props) {
     return (
-        <View style={css.cont}>
+        <View style={css.cont_blue}>
             <Image source={img_logo} style={styles.img_logo} />
             <Text style={[css.ttl, styles.ttl]}>電話番号入力</Text>
             <Text style={[css.dsc, styles.dsc]}>電話番号を入力して下さい。</Text>

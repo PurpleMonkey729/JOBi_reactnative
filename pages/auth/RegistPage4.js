@@ -96,7 +96,7 @@ export default function RegistPage4(props) {
     const [ch_m, setMale] = useState(false);
     const [ch_f, setFemale] = useState(false);
     return (
-        <View style={css.cont}>
+        <View style={css.cont_blue}>
             <Image source={img_logo} style={styles.img_logo} />
             <Text style={[css.ttl, styles.ttl]}>基本情報入力</Text>
             <Text style={styles.sub_ttl}>氏名</Text>

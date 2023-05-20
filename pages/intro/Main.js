@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
 
 export default function Main(props) {
     return (
-        <View style={css.cont}>
+        <View style={css.cont_blue}>
             <ImageBackground source={props.bg} style={styles.bg}>
                 <View style={styles.header}>
                     <Image source={{ uri: img_logo }} style={styles.img_logo} />

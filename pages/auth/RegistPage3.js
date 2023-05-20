@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
 
 export default function RegistPage3(props) {
     return (
-        <View style={css.cont}>
+        <View style={css.cont_blue}>
             <Image source={img_logo} style={styles.img_logo} />
             <Text style={[css.ttl, styles.ttl]}>パスワード設定</Text>
             <Text style={[css.dsc, styles.dsc]}>6文字以上英数字</Text>

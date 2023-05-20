@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
 
 export default function RegistPage4(props) {
     return (
-        <View style={css.cont}>
+        <View style={css.cont_blue}>
             <View style={styles.header}>
                 <Image source={btn_back} style={styles.btn_back} />
                 <Text style={styles.header_ttl}>最終確認</Text>
