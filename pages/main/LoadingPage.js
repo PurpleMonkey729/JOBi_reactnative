@@ -96,13 +96,12 @@ const styles = StyleSheet.create({
         fontWeight: 600,
     },
     txt_jp: {
-        fontSize: 15,
         marginTop: 7,
         textAlign: 'center',
+        fontSize: 15,
     }
 });
 
-console.log({...styles.circle, ...styles['circle0']});
 export default function LoadingPage(props) {
     const array = Array.from(Array(9).keys()).map(el=>'circle'+el);
     return (

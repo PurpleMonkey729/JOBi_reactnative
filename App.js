@@ -16,6 +16,9 @@ import RegistPage5    from './pages/auth/RegistPage5';
 import RegistEndPage  from './pages/auth/RegistEndPage';
 
 import LoadingPage    from './pages/main/LoadingPage';
+import FailedPage     from './pages/main/FailedPage';
+import WorkListPage   from './pages/main/WorkListPage';
+import WorkDetailPage from './pages/main/WorkDetailPage';
 
 const Stack = createStackNavigator();
 
@@ -23,7 +26,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="LoadingPage"
+        initialRouteName="WorkDetailPage"
         screenOptions={{
           headerShown: false
         }}>
@@ -39,6 +42,9 @@ export default function App() {
         <Stack.Screen name="RegistPage5" component={RegistPage5} />
         <Stack.Screen name="RegistEndPage" component={RegistEndPage} />
         <Stack.Screen name="LoadingPage" component={LoadingPage} />
+        <Stack.Screen name="FailedPage" component={FailedPage} />
+        <Stack.Screen name="WorkListPage" component={WorkListPage} />
+        <Stack.Screen name="WorkDetailPage" component={WorkDetailPage} />
       </Stack.Navigator>
     </NavigationContainer>
   );

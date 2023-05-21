@@ -1,6 +1,8 @@
 import { StyleSheet, Text, View, Image, TextInput, Picker } from 'react-native';
+import { useState, useEffect } from 'react';
 
 import icon_search from '../assets/icon-search.png';
+import img_right from '../assets/right.png';
 
 const styles = StyleSheet.create({
     header: {
@@ -13,6 +15,7 @@ const styles = StyleSheet.create({
         paddingTop: 25,
         backgroundColor: 'white',
         boxShadow: '0 3px 6px #888',
+        zIndex: 10,
     },
     dsc: {
         fontSize: 15,
@@ -88,10 +91,51 @@ const styles = StyleSheet.create({
         paddingLeft: 19,
         borderRadius: 8,
         border: '1px solid #2699FB',
+    },
+    menu_city: {
+        position: 'absolute',
+        top: 60,
+    },
+    menu_filter: {
+        position: 'absolute',
+        top: 60,
+        right: 0,
+    },
+    menu_item: {
+        width: 343,
+        height: 48,
+        marginBottom: 1,
+        backgroundColor: 'white',
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingLeft: 19,
+        color: '#2699FB',
+        fontSize: 14,
+        fontWeight: 'bold',
+        position: 'relative',
+        boxShadow: '0 3px 6px #00000033',
+    },
+    img_arrow_right: {
+        position: 'absolute',
+        right: 15,
+        width: 10,
+        height: 10,
+    },
+    img_arrow_down: {
+        position: 'absolute',
+        right: 15,
+        width: 10,
+        height: 10,
+        rotate: '90deg',
     }
 });
 
 export default function Header(props) {
+    const [city, setCity] = useState('那覇市');
+    const [filter, setFilter] = useState('未選択');
+    const [isShowCityMenu, setShowCityMenu] = useState(false);
+    const [isShowFilterMenu, setShowFilterMenu] = useState(false);
     const dates = new Array();
     const days = ['日', '月', '火', '水', '木', '金', '土'];
     const now = new Date();
@@ -101,6 +145,24 @@ export default function Header(props) {
     for (let i = 1; i <= 5; i++) {
         const tmpDate = new Date(tmrw.getTime() + i * (24 * 60 * 60 * 1000));
         dates.push({ first: tmpDate.getMonth() + "月" + tmpDate.getDate() + '日', second: days[tmpDate.getDay()] });
+    }
+    const cites = ['那覇市', '浦添市', '宜野湾市', '沖縄市', 'うるま市'];
+    const filters = ['飲食店', '未経験OK', '交通費支給', '倉庫', '宅配'];
+    const onClickCity = name => {
+        setShowCityMenu(false);
+        setCity(name);
+    }
+    const onClickFilter = name => {
+        setShowFilterMenu(false);
+        setFilter(name);
+    }
+    const showCityMenu = () => {
+        setShowCityMenu(true);
+        setShowFilterMenu(false);
+    }
+    const showFilterMenu = () => {
+        setShowFilterMenu(true);
+        setShowCityMenu(false);
     }
     return (
         <View style={styles.header}>
@@ -123,15 +185,23 @@ export default function Header(props) {
             <View style={styles.box_search}>
                 <View style={styles.box_input}>
                     <Image source={icon_search} style={styles.icon} />
-                    <TextInput style={styles.input} placeholder='都道府県' />
+                    <TextInput style={styles.input} value={city} onFocus={showCityMenu} />
+                    {isShowCityMenu && <View style={styles.menu_city}>
+                        {cites.map(item => <View
+                            style={styles.menu_item}
+                            onStartShouldSetResponder={() => onClickCity(item)}
+                        >{item}<Image source={img_right} style={styles.img_arrow_right} /></View>)}
+                    </View>}
                 </View>
                 <Text style={styles.ttl_select}>絞り込み</Text>
-                <Picker style={styles.select}>
-                    <Picker.Item label="未選択" value="未選択" />
-                    <Picker.Item label="1" value="1" />
-                    <Picker.Item label="2" value="2" />
-                    <Picker.Item label="3" value="3" />
-                </Picker>
+                <TextInput style={styles.select} value={filter} onFocus={showFilterMenu} />
+                <Image source={img_right} style={styles.img_arrow_down} />
+                {isShowFilterMenu && <View style={styles.menu_filter}>
+                    {filters.map(item => <View
+                        style={styles.menu_item}
+                        onStartShouldSetResponder={() => onClickFilter(item)}
+                    >{item}<Image source={img_right} style={styles.img_arrow_right} /></View>)}
+                </View>}
             </View>
         </View>
     );

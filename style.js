@@ -13,6 +13,7 @@ export const css = StyleSheet.create({
     cont_white_header: {
         width: 428,
         paddingTop: 212,
+        paddingBottom: 84,
         marginLeft: 'auto',
         marginRight: 'auto',
         fontFamily: 'Arial',
