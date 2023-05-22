@@ -62,6 +62,9 @@ const styles = StyleSheet.create({
 });
 
 export default function Main(props) {
+    const goNext = page_num => {
+        // Need Coding!
+    }
     return (
         <View style={css.cont_blue}>
             <ImageBackground source={props.bg} style={styles.bg}>
@@ -74,7 +77,7 @@ export default function Main(props) {
                     <Text style={styles.txt}>{props.txt1}</Text>
                     <Text style={styles.txt}>{props.txt2}</Text>
                 </View>
-                <View style={styles.btn_next}><ButtonNext img={props.btn_next} txt={props.page_num + '/3'} /></View>
+                <View style={styles.btn_next}><ButtonNext img={props.btn_next} txt={props.page_num + '/3'} onStartShouldSetResponder={()=>goNext(props.page_num)}/></View>
             </ImageBackground>
         </View >
     );

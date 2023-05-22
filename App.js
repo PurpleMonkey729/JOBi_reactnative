@@ -19,6 +19,7 @@ import LoadingPage    from './pages/main/LoadingPage';
 import FailedPage     from './pages/main/FailedPage';
 import WorkListPage   from './pages/main/WorkListPage';
 import WorkDetailPage from './pages/main/WorkDetailPage';
+import CertificatePage from './pages/main/CertificatePage';
 
 const Stack = createStackNavigator();
 
@@ -26,7 +27,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="WorkDetailPage"
+        initialRouteName="LoginPage"
         screenOptions={{
           headerShown: false
         }}>
@@ -45,6 +46,7 @@ export default function App() {
         <Stack.Screen name="FailedPage" component={FailedPage} />
         <Stack.Screen name="WorkListPage" component={WorkListPage} />
         <Stack.Screen name="WorkDetailPage" component={WorkDetailPage} />
+        <Stack.Screen name="CertificatePage" component={CertificatePage} />
       </Stack.Navigator>
     </NavigationContainer>
   );
