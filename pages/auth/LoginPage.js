@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { Pressable, StyleSheet, Text, View, Image } from 'react-native';
 import { useState } from 'react';
 
 import InputIcon from '../../components/InputIcon';
@@ -8,6 +8,7 @@ import btn_back from '../../assets/btn-back.png';
 import img_logo from '../../assets/logo2.png';
 import icon_mail from '../../assets/icon-mail.png';
 import icon_lock from '../../assets/icon-lock.png';
+import btn_grad from '../../assets/btn-grad.png';
 
 const styles = StyleSheet.create({
     header: {
@@ -81,6 +82,13 @@ const styles = StyleSheet.create({
         fontSize: 14,
         color: '#2699FB',
         fontWeight: 'bold',
+    },
+    btn: {
+        marginTop: 55,
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        width: 367,
+        height: 71,
     }
 });
 
@@ -105,7 +113,9 @@ export default function LoginPage(props) {
             <InputIcon icon={icon_mail} placeholder="メールアドレス" keyboardType="default"></InputIcon>
             <View style={{ marginTop: 17 }}></View>
             <InputIcon icon={icon_lock} placeholder="パスワード" keyboardType="default"></InputIcon>
-            <View style={[css.btn_yellow, styles.btn_yellow]} onStartShouldSetResponder={login}>ログイン</View>
+            <Pressable onPress={login}>
+                <Image source={btn_grad} style={styles.btn} />
+            </Pressable>
             {
                 isShowModal &&
                 <View style={styles.bg_modal}>

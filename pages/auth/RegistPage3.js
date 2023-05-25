@@ -1,11 +1,9 @@
 import { StyleSheet, Text, View, Image, TextInput } from 'react-native';
 
-import InputIcon from '../../components/InputIcon';
 import ButtonNext from '../../components/ButtonNext';
 import { css } from '../../style';
 
 import img_logo from '../../assets/logo2.png';
-import icon_mail from '../../assets/icon-mail.png';
 import btn_next from '../../assets/btn-next.png';
 
 const styles = StyleSheet.create({
