@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, TextInput, Picker } from 'react-native';
+import { Pressable, StyleSheet, Text, View, Image, TextInput, Picker } from 'react-native';
 import { useState } from "react";
 
 import ButtonNext from '../../components/ButtonNext';
@@ -9,8 +9,24 @@ import img_logo from '../../assets/logo2.png';
 import photo_default from '../../assets/photo.png';
 import btn_camera from '../../assets/camera.png';
 import btn_next from '../../assets/btn-next.png';
+import btn_back from '../../assets/btn-back.png';
 
 const styles = StyleSheet.create({
+    header: {
+        marginTop: 38,
+        display: 'flex',
+        flexDirection: 'row',
+    },
+    btn_back: {
+        marginLeft: 39,
+        width: 16,
+        height: 16,
+    },
+    header_ttl: {
+        marginLeft: 128,
+        color: 'white',
+        fontSize: 15.5,
+    },
     img_logo: {
         width: 355,
         height: 141,
@@ -90,81 +106,151 @@ const styles = StyleSheet.create({
         marginLeft: 327,
         marginBottom: 49,
     },
+    input_ok: {
+        backgroundColor: 'transparent',
+        appearance: 'none',
+    },
+    date_ok: {
+        alignItems: 'center',
+    },
+    text_agree: {
+        color: 'white',
+        fontSize: 12,
+        marginTop: 35,
+        marginLeft: 67,
+    },
+    btn_yellow: {
+        marginTop: 35,
+        marginBottom: 50,
+    }
 });
 
 export default function RegistPage4(props) {
-    const [ch_m, setMale] = useState(false);
+    const years = Array.from(Array(50).keys()).map(i=> i+1950);
+    const months = Array.from(Array(12).keys()).map(i=> i+1);
+    const days = Array.from(Array(31).keys()).map(i=> i+1);
+    console.log(years);
+    const [ch_m, setMale] = useState(true);
     const [ch_f, setFemale] = useState(false);
+    const [conform, setConform] = useState(false);
+    const clickCheckMale = key => {
+        if (!conform) {
+            setMale(key);
+            setFemale(!key);
+        }
+    }
+    const clickCheckFemale = key => {
+        if (!conform) {
+            setFemale(key);
+            setMale(!key);
+        }
+    }
+    const clickGo = () => {
+        setConform(true);
+    }
+    const clickEdit = () => {
+        setConform(false);
+    }
     return (
         <View style={css.cont_blue}>
+            {
+                conform &&
+                <View style={styles.header}>
+                    <Pressable onPress={clickEdit}>
+                        <Image source={btn_back} style={styles.btn_back} />
+                    </Pressable>
+                    <Text style={styles.header_ttl}>最終確認</Text>
+                </View>
+            }
             <Image source={img_logo} style={styles.img_logo} />
             <Text style={[css.ttl, styles.ttl]}>基本情報入力</Text>
             <Text style={styles.sub_ttl}>氏名</Text>
             <View style={styles.box}>
-                <TextInput style={[css.input, styles.input]} placeholder='姓' />
-                <TextInput style={[css.input, styles.input]} placeholder='名' />
+                <TextInput style={[css.input, styles.input, conform && styles.input_ok]} placeholder={!conform && '姓'} disabled={conform} />
+                <TextInput style={[css.input, styles.input, conform && styles.input_ok]} placeholder={!conform && '名'} disabled={conform} />
             </View>
             <Text style={styles.sub_ttl}>フリガナ</Text>
             <View style={styles.box}>
-                <TextInput style={[css.input, styles.input]} placeholder='セイ' />
-                <TextInput style={[css.input, styles.input]} placeholder='メイ' />
+                <TextInput style={[css.input, styles.input, conform && styles.input_ok]} placeholder={!conform && 'セイ'} disabled={conform} />
+                <TextInput style={[css.input, styles.input, conform && styles.input_ok]} placeholder={!conform && 'メイ'} disabled={conform} />
             </View>
             <Text style={styles.sub_ttl}>生年月日</Text>
-            <View style={styles.box}>
+            <View style={[styles.box, conform && styles.date_ok]}>
                 <Picker
-                    selectedValue='選択'
-                    style={[css.input, styles.select]}
+                    style={[css.input, styles.select, conform && styles.input_ok]}
+                    disabled={conform}
                 >
                     <Picker.Item label="選択" value="選択" />
-                    <Picker.Item label="1950" value="1950" />
+                    {
+                        years.map(item =>
+                            <Picker.Item label={item} value={item} />
+                        )
+                    }
                 </Picker>
                 <Text style={styles.text_label}>年</Text>
                 <Picker
-                    selectedValue='選択'
-                    style={[css.input, styles.select]}
+                    style={[css.input, styles.select, conform && styles.input_ok]}
+                    disabled={conform}
                 >
                     <Picker.Item label="選択" value="選択" />
-                    <Picker.Item label="1" value="1" />
-                    <Picker.Item label="2" value="2" />
-                    <Picker.Item label="3" value="3" />
+                    {
+                        months.map(item =>
+                            <Picker.Item label={item} value={item} />
+                        )
+                    }
                 </Picker>
                 <Text style={styles.text_label}>月</Text>
                 <Picker
-                    selectedValue='選択'
-                    style={[css.input, styles.select]}
+                    style={[css.input, styles.select, conform && styles.input_ok]}
+                    disabled={conform}
                 >
                     <Picker.Item label="選択" value="選択" />
-                    <Picker.Item label="1" value="1" />
-                    <Picker.Item label="2" value="2" />
-                    <Picker.Item label="3" value="3" />
+                    {
+                        days.map(item =>
+                            <Picker.Item label={item} value={item} />
+                        )
+                    }
                 </Picker>
                 <Text style={styles.text_label}>日</Text>
             </View>
             <Text style={styles.sub_ttl}>性別</Text>
             <View style={styles.box_gender}>
                 <CheckBox
-                    onPress={() => setMale(!ch_m)}
+                    onPress={() => clickCheckMale(!ch_m)}
                     title="男性"
                     isChecked={ch_m}
-                    type={'editable'}
+                    disabled={conform}
                 />
-                <View style={{marginLeft: 58}} />
+                <View style={{ marginLeft: 58 }} />
                 <CheckBox
-                    onPress={() => setFemale(!ch_f)}
+                    onPress={() => clickCheckFemale(!ch_f)}
                     title="女性"
                     isChecked={ch_f}
-                    type={'editable'}
+                    disabled={conform}
                 />
             </View>
             <Text style={styles.sub_ttl}>メールアドレス</Text>
-            <TextInput style={css.input} placeholder='入力' />
+            <TextInput style={[css.input, conform && styles.input_ok]} placeholder={!conform && '入力'} disabled={conform} />
             <Text style={styles.sub_ttl}>顔写真のアップロード</Text>
             <Text style={styles.text_yellow}>必ず顔が分かる写真を<br />お選び下さい。</Text>
             <View style={styles.photo_box}>
                 <Image source={photo_default} style={styles.photo} />
-                <Image source={btn_camera} style={styles.btn_camera} />
+                {
+                    !conform &&
+                    <Image source={btn_camera} style={styles.btn_camera} />
+                }
             </View>
-            <View style={styles.btn_next}><ButtonNext img={btn_next} txt='4/5' /></View>
+            {
+                !conform &&
+                <View style={styles.btn_next} onStartShouldSetResponder={clickGo}><ButtonNext img={btn_next} txt='4/5' /></View>
+            }
+            {
+                conform &&
+                <View>
+                    <Text style={styles.text_agree}>登録完了すると利用規約とプライバシーポリシーに<br />同意したことになります。</Text>
+                    <View style={[css.btn_yellow, styles.btn_yellow]}>✓　この内容で会員登録する</View>
+                </View>
+            }
         </View >
     );
 }
