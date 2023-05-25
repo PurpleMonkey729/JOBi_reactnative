@@ -12,7 +12,6 @@ import RegistPage1    from './pages/auth/RegistPage1';
 import RegistPage2    from './pages/auth/RegistPage2';
 import RegistPage3    from './pages/auth/RegistPage3';
 import RegistPage4    from './pages/auth/RegistPage4';
-import RegistPage5    from './pages/auth/RegistPage5';
 import RegistEndPage  from './pages/auth/RegistEndPage';
 
 import LoadingPage    from './pages/main/LoadingPage';
@@ -40,7 +39,6 @@ export default function App() {
         <Stack.Screen name="RegistPage2" component={RegistPage2} />
         <Stack.Screen name="RegistPage3" component={RegistPage3} />
         <Stack.Screen name="RegistPage4" component={RegistPage4} />
-        <Stack.Screen name="RegistPage5" component={RegistPage5} />
         <Stack.Screen name="RegistEndPage" component={RegistEndPage} />
         <Stack.Screen name="LoadingPage" component={LoadingPage} />
         <Stack.Screen name="FailedPage" component={FailedPage} />
