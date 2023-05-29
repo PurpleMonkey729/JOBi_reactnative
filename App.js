@@ -19,6 +19,8 @@ import FailedPage     from './pages/main/FailedPage';
 import WorkListPage   from './pages/main/WorkListPage';
 import WorkDetailPage from './pages/main/WorkDetailPage';
 import CertificatePage from './pages/main/CertificatePage';
+import CertificatePhotoPage1 from './pages/main/CertificatePhotoPage1';
+import CertificatePhotoPage2 from './pages/main/CertificatePhotoPage2';
 
 const Stack = createStackNavigator();
 
@@ -26,7 +28,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="RegistPage4"
+        initialRouteName="CertificatePhotoPage2"
         screenOptions={{
           headerShown: false
         }}>
@@ -45,6 +47,8 @@ export default function App() {
         <Stack.Screen name="WorkListPage" component={WorkListPage} />
         <Stack.Screen name="WorkDetailPage" component={WorkDetailPage} />
         <Stack.Screen name="CertificatePage" component={CertificatePage} />
+        <Stack.Screen name="CertificatePhotoPage1" component={CertificatePhotoPage1} />
+        <Stack.Screen name="CertificatePhotoPage2" component={CertificatePhotoPage2} />
       </Stack.Navigator>
     </NavigationContainer>
   );
