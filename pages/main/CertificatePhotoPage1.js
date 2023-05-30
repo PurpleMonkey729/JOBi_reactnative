@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, Text, View, Image, ImageBackground } from 'react-native';
+import { Pressable, StyleSheet, Text, View, Image } from 'react-native';
 
 import { css } from '../../style';
 

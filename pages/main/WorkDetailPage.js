@@ -14,6 +14,7 @@ import img_dollar from '../../assets/dollar.png';
 import img_noexp from '../../assets/noexp.png';
 import img_car from '../../assets/car.png';
 import img_moneyhand from '../../assets/moneyhand.png';
+import btn_grad from '../../assets/btn-grad2.png';
 
 const styles = StyleSheet.create({
     header: {
@@ -248,12 +249,33 @@ const styles = StyleSheet.create({
         right: 0,
         marginLeft: 'auto',
         marginRight: 'auto',
+    },
+    txt_waiting: {
+        position: 'fixed',
+        bottom: 110,
+        left: 0,
+        right: 0,
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        backgroundColor: '#172B4D',
+        white: 'white',
+    },
+    btn_grad: {
+        position: 'fixed',
+        bottom: 110,
+        left: 0,
+        right: 0,
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        width: 300,
+        height: 54,
     }
 });
 
 export default function WorkDetailPage(props) {
     const [isShowContentMore, setShowContentMore] = useState(false);
     const [isShowWarningMore, setShowWarningMore] = useState(false);
+    const pageState = 1;
     const showContentMore = () => {
         setShowContentMore(!isShowContentMore);
     }
@@ -341,9 +363,17 @@ export default function WorkDetailPage(props) {
                         </Text>
                     </View>
                 }
-                <View style={{marginBottom: 150}} />
+                <View style={{ marginBottom: 150 }} />
             </View>
-            <View style={[css.btn_yellow, styles.btn_yellow]}>本人確認にすすむ</View>
+            {
+                pageState == 1 && <View style={[css.btn_yellow, styles.btn_yellow]}>本人確認にすすむ</View> ||
+                pageState == 2 && <View style={[css.btn_yellow, styles.txt_waiting]}>本人確認資料を確認中</View> ||
+                pageState == 3 &&
+                <Pressable>
+                    <Image source={btn_grad} style={styles.btn_grad} />
+                </Pressable>
+            }
+
             <Footer num={1} />
         </View>
     );
