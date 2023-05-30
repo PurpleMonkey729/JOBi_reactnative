@@ -21,7 +21,7 @@ export const css = StyleSheet.create({
         height: '100%',
         minHeight: '100vh',
         position: 'relative',
-        backgroundColor: 'white'
+        backgroundColor: '#F6F9FC'
     },
     cont_white: {
         width: 428,
@@ -32,7 +32,7 @@ export const css = StyleSheet.create({
         height: '100%',
         minHeight: '100vh',
         position: 'relative',
-        backgroundColor: 'white'
+        backgroundColor: '#F6F9FC'
     },
     cont_white_full: {
         width: 428,
@@ -42,7 +42,7 @@ export const css = StyleSheet.create({
         height: '100%',
         minHeight: '100vh',
         position: 'relative',
-        backgroundColor: 'white',
+        backgroundColor: '#F6F9FC',
     },
     btn: {
         display: 'flex',
