@@ -1,22 +1,12 @@
-
-import { Pressable, StyleSheet, Text, View } from "react-native";
-import React from "react";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { StyleSheet, Text, View } from "react-native";
 
 const CheckBox = (props) => {
-    const iconName = props.isChecked ?
-        "checkbox-marked" : "checkbox-blank-outline";
-
     return (
-        <View style={styles.container}>
-            <Pressable onPress={props.onPress}>
-                <View style={[styles.bg, props.disabled && !props.isChecked && styles.bg_none]} />
-                {
-                    props.disabled && <MaterialCommunityIcons name={iconName} size={35} color="#2C92D2" /> ||
-                    !props.disabled && <MaterialCommunityIcons name={iconName} size={35} color="#2699FB" />
-                }
-            </Pressable>
-            <Text style={styles.title}>{props.title}</Text>
+        <View style={styles.box} onStartShouldSetResponder={props.onPress}>
+            <View style={[styles.outline, props.checked && styles.outline_checked, props.disabled && styles.outline_disabled]}>
+                {props.checked && <View style={styles.checkmark}></View>}
+            </View>
+            <Text style={styles.txt}>{props.txt}</Text>
         </View>
     );
 };
@@ -24,29 +14,45 @@ const CheckBox = (props) => {
 export default CheckBox;
 
 const styles = StyleSheet.create({
-    container: {
-        justifyContent: "flex-start",
-        alignItems: "center",
-        flexDirection: "row",
-        position: 'relative',
+    box: {
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
     },
-    bg: {
-        width: 27,
-        height: 26,
-        position: 'absolute',
-        top: 5,
-        left: 4,
-        borderRadius: 3,
-        backgroundColor: 'white',
-        zIndex: '-1',
-        border: '3px solid #2699FB'
-    },
-    title: {
-        fontSize: 14,
-        color: "#fff",
+    txt: {
+        color: '#fff',
+        fontSize: 15,
         marginLeft: 5,
     },
-    bg_none: {
-        backgroundColor: '#2C92D2',
-    }
+    outline:{
+        borderRadius: 6,
+        border: '2px solid #2699FB',
+        backgroundColor: '#fff',
+        position: 'relative',
+        width: 30,
+        height: 30,
+    },
+    outline_checked:{
+        borderRadius: 6,
+        border: '2px solid #2699FB',
+        backgroundColor: '#2699FB',
+        position: 'relative',
+        width: 30,
+        height: 30,
+    },
+    outline_disabled:{
+        borderColor: 'transparent',
+        backgroundColor: 'transparent',
+    },
+    checkmark: {
+        border: '3px solid white',
+        borderTopWidth: 0,
+        borderRightWidth: 0,
+        rotate: '-45deg',
+        position: 'absolute',
+        width: 18,
+        height: 10,
+        top: 5,
+        left: 4,
+    },
 });

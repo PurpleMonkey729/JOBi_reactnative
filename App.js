@@ -32,7 +32,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="MessageDetailPage"
+        initialRouteName="RegistPage4"
         screenOptions={{
           headerShown: false
         }}>
