@@ -24,6 +24,7 @@ import CertificatePhotoPage2 from './pages/main/CertificatePhotoPage2';
 import CertificateEndPage from './pages/main/CertificateEndPage';
 import WorkConformPage from './pages/main/WorkConformPage';
 import MessageListPage from './pages/main/MessageListPage';
+import MessageDetailPage from './pages/main/MessageDetailPage';
 
 const Stack = createStackNavigator();
 
@@ -31,7 +32,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="MessageListPage"
+        initialRouteName="MessageDetailPage"
         screenOptions={{
           headerShown: false
         }}>
@@ -55,6 +56,7 @@ export default function App() {
         <Stack.Screen name="CertificateEndPage" component={CertificateEndPage} />
         <Stack.Screen name="WorkConformPage" component={WorkConformPage} />
         <Stack.Screen name="MessageListPage" component={MessageListPage} />
+        <Stack.Screen name="MessageDetailPage" component={MessageDetailPage} />
       </Stack.Navigator>
     </NavigationContainer>
   );

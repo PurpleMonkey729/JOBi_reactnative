@@ -23,8 +23,7 @@ const styles = StyleSheet.create({
         width: '100%',
         fontSize: 24,
         color: '#303030',
-        paddingLeft: 10,
-        paddingRight: 10,
+        padding: 5,
         marginRight: 10,
     },
     btn_search: {
