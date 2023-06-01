@@ -11,7 +11,7 @@ import icon_setting from '../assets/icon-setting.png';
 const styles = StyleSheet.create({
     footer: {
         position: 'fixed',
-        top: 842,
+        bottom: 0,
         backgroundColor: '#2C92D2',
         width: 428,
         height: 84,
