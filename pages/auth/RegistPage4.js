@@ -183,7 +183,7 @@ export default function RegistPage4(props) {
                     <Picker.Item label="選択" value="選択" />
                     {
                         years.map(item =>
-                            <Picker.Item label={item} value={item} />
+                            <Picker.Item label={item} color="black" value={item} />
                         )
                     }
                 </Picker>
@@ -195,7 +195,7 @@ export default function RegistPage4(props) {
                     <Picker.Item label="選択" value="選択" />
                     {
                         months.map(item =>
-                            <Picker.Item label={item} value={item} />
+                            <Picker.Item label={item} color="black" value={item} />
                         )
                     }
                 </Picker>
@@ -207,7 +207,7 @@ export default function RegistPage4(props) {
                     <Picker.Item label="選択" value="選択" />
                     {
                         days.map(item =>
-                            <Picker.Item label={item} value={item} />
+                            <Picker.Item label={item} color="black" value={item} />
                         )
                     }
                 </Picker>

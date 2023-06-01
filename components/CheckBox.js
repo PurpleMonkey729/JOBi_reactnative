@@ -21,12 +21,13 @@ const styles = StyleSheet.create({
     },
     txt: {
         color: '#fff',
-        fontSize: 15,
+        fontSize: 14,
         marginLeft: 5,
     },
     outline:{
         borderRadius: 6,
-        border: '2px solid #2699FB',
+        borderWidth: 2,
+        borderColor: '#2699FB',
         backgroundColor: '#fff',
         position: 'relative',
         width: 30,
@@ -34,7 +35,6 @@ const styles = StyleSheet.create({
     },
     outline_checked:{
         borderRadius: 6,
-        border: '2px solid #2699FB',
         backgroundColor: '#2699FB',
         position: 'relative',
         width: 30,
