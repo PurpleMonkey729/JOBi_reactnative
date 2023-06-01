@@ -217,15 +217,15 @@ export default function RegistPage4(props) {
             <View style={styles.box_gender}>
                 <CheckBox
                     onPress={() => clickCheckMale(!ch_m)}
-                    title="男性"
-                    isChecked={ch_m}
+                    txt="男性"
+                    checked={ch_m}
                     disabled={conform}
                 />
                 <View style={{ marginLeft: 58 }} />
                 <CheckBox
                     onPress={() => clickCheckFemale(!ch_f)}
-                    title="女性"
-                    isChecked={ch_f}
+                    txt="女性"
+                    checked={ch_f}
                     disabled={conform}
                 />
             </View>
