@@ -130,19 +130,16 @@ export default function RegistPage4(props) {
     const months = Array.from(Array(12).keys()).map(i=> i+1);
     const days = Array.from(Array(31).keys()).map(i=> i+1);
     console.log(years);
-    const [ch_m, setMale] = useState(true);
-    const [ch_f, setFemale] = useState(false);
+    const [gender, setGender] = useState("M")
     const [conform, setConform] = useState(false);
     const clickCheckMale = key => {
         if (!conform) {
-            setMale(key);
-            setFemale(!key);
+            setGender("M")
         }
     }
     const clickCheckFemale = key => {
         if (!conform) {
-            setFemale(key);
-            setMale(!key);
+            setGender("F")
         }
     }
     const clickGo = () => {
@@ -216,16 +213,16 @@ export default function RegistPage4(props) {
             <Text style={styles.sub_ttl}>性別</Text>
             <View style={styles.box_gender}>
                 <CheckBox
-                    onPress={() => clickCheckMale(!ch_m)}
+                    onPress={() => clickCheckMale()}
                     txt="男性"
-                    checked={ch_m}
+                    checked={gender=="M"}
                     disabled={conform}
                 />
                 <View style={{ marginLeft: 58 }} />
                 <CheckBox
-                    onPress={() => clickCheckFemale(!ch_f)}
+                    onPress={() => clickCheckFemale()}
                     txt="女性"
-                    checked={ch_f}
+                    checked={gender=="F"}
                     disabled={conform}
                 />
             </View>
