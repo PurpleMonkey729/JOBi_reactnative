@@ -1,4 +1,5 @@
-import { StyleSheet, Text, View, Image, ImageBackground } from 'react-native';
+import { StyleSheet, Text, View, Image, Animated } from 'react-native';
+import { useRef, useState, useEffect } from 'react';
 
 import { css } from '../../style';
 import Header from '../../components/Header';
@@ -12,6 +13,69 @@ import heart_no from '../../assets/heart-no.png';
 import heart_yes from '../../assets/heart-yes.png';
 
 const styles = StyleSheet.create({
+    box_loader: {
+        marginTop: 158,
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        position: 'relative',
+        width: 100,
+        height: 100,
+    },
+    circle: {
+        position: 'absolute',
+        width: 12,
+        height: 12,
+        backgroundColor: '#2C92D2',
+        borderRadius: '50%',
+    },
+    circle0: {
+        top: 0,
+        left: 37,
+    },
+    circle1: {
+        top: 10,
+        left: 63,
+    },
+    circle2: {
+        top: 30,
+        left: 79,
+    },
+    circle3: {
+        top: 53,
+        left: 73,
+    },
+    circle4: {
+        top: 70,
+        left: 55,
+    },
+    circle5: {
+        top: 73,
+        left: 30,
+    },
+    circle6: {
+        top: 60,
+        left: 8,
+    },
+    circle7: {
+        top: 35,
+        left: 0,
+    },
+    circle8: {
+        top: 10,
+        left: 10,
+    },
+    txt_en: {
+        fontSize: 28,
+        color: '#2C92D2',
+        marginTop: 88,
+        textAlign: 'center',
+        fontWeight: 600,
+    },
+    txt_jp: {
+        marginTop: 7,
+        textAlign: 'center',
+        fontSize: 15,
+    },
     box: {
         width: '100%',
         paddingTop: 10,
@@ -109,10 +173,41 @@ const styles = StyleSheet.create({
     distance: {
         color: '#172B4D',
         fontSize: 10,
-    }
+    },
 });
 
+const AnimCircle = props => {
+    const zoom = useRef(new Animated.Value(1)).current; // Initial value for opacity: 0
+    useEffect(() => {
+        setTimeout(() => {Animated.loop(
+            Animated.sequence([
+                Animated.timing(zoom, {
+                    toValue: 1.75,
+                    duration: 900,
+                }),
+                Animated.timing(zoom, {
+                    toValue: 1,
+                    duration: 900,
+                })
+            ])
+        ).start();
+        }, props.delay);
+        
+    }, [zoom]);
+
+    return (
+        <Animated.View // Special animatable View
+            style={{
+                ...props.style,
+                scale: zoom, // Bind opacity to animated value
+            }}>
+        </Animated.View>
+    );
+};
+
 export default function WorkListPage(props) {
+    const array = Array.from(Array(9).keys()).map(el=>'circle'+el);
+    const [ready, setReady] = useState(false);
     const tmp_price = 5000;
     const data = [
         {
@@ -185,39 +280,54 @@ export default function WorkListPage(props) {
     return (
         <View style={css.cont_white_header}>
             <Header />
-            <View style={styles.box}>
-                {data.map(item =>
-                    <View style={styles.item}>
-                        {
-                            item.clock == 'red' &&
-                            <View style={styles.box_time}>
-                                <Image source={clock_red} style={styles.clock} />
-                                <Text style={styles.time_red}>{item.time}</Text>
-                            </View> ||
-                            item.clock == 'blue' &&
-                            <View style={styles.box_time}>
-                                <Image source={clock_blue} style={styles.clock} />
-                                <Text style={styles.time}>{item.time}</Text>
-                            </View>
-                        }
-                        <Image source={photo_worker} style={styles.photo} />
-                        <Text style={styles.txt}>{item.txt}</Text>
-                        <View style={styles.box_date}>
-                            <Text style={styles.date}>{item.date}</Text>
-                            <Text style={styles.price}>{item.price}</Text>
-                        </View>
-                        <View style={styles.box_bottom}>
-                            <View style={styles.city}>{item.city}</View>
-                            {
-                                item.like == 'yes' && <Image source={heart_yes} style={styles.heart} /> ||
-                                item.like == 'no' && <Image source={heart_no} style={styles.heart} />
-                            }
-                            <Image source={img_distance} style={styles.img_distance} />
-                            <Text style={styles.distance}>{item.distance}</Text>
-                        </View>
+            {
+                !ready &&
+                <View>
+                    <View style={styles.box_loader}>
+                        {array.map((item, index) =>
+                            <AnimCircle style={{ ...styles.circle, ...styles[item] }} delay={index * 200}>
+                            </AnimCircle>
+                        )}
                     </View>
-                )}
-            </View>
+                    <Text style={styles.txt_en}>Loading</Text>
+                    <Text style={styles.txt_jp}>求人を読み込んでいます</Text>
+                </View>
+                ||
+                ready &&
+                <View style={styles.box}>
+                    {data.map(item =>
+                        <View style={styles.item}>
+                            {
+                                item.clock == 'red' &&
+                                <View style={styles.box_time}>
+                                    <Image source={clock_red} style={styles.clock} />
+                                    <Text style={styles.time_red}>{item.time}</Text>
+                                </View> ||
+                                item.clock == 'blue' &&
+                                <View style={styles.box_time}>
+                                    <Image source={clock_blue} style={styles.clock} />
+                                    <Text style={styles.time}>{item.time}</Text>
+                                </View>
+                            }
+                            <Image source={photo_worker} style={styles.photo} />
+                            <Text style={styles.txt}>{item.txt}</Text>
+                            <View style={styles.box_date}>
+                                <Text style={styles.date}>{item.date}</Text>
+                                <Text style={styles.price}>{item.price}</Text>
+                            </View>
+                            <View style={styles.box_bottom}>
+                                <View style={styles.city}>{item.city}</View>
+                                {
+                                    item.like == 'yes' && <Image source={heart_yes} style={styles.heart} /> ||
+                                    item.like == 'no' && <Image source={heart_no} style={styles.heart} />
+                                }
+                                <Image source={img_distance} style={styles.img_distance} />
+                                <Text style={styles.distance}>{item.distance}</Text>
+                            </View>
+                        </View>
+                    )}
+                </View>
+            }
             <Footer num={1} />
         </View>
     );

@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View, Image, TextInput, Picker } from 'react-native';
-import { useState, useEffect } from 'react';
+import { useRef, useState, useEffect } from 'react';
 
 import icon_search from '../assets/icon-search.png';
 import img_right from '../assets/right.png';
@@ -12,9 +12,9 @@ const styles = StyleSheet.create({
         top: 0,
         paddingLeft: 16,
         paddingRight: 16,
-        paddingTop: 25,
+        paddingTop: 10,
         backgroundColor: 'white',
-        boxShadow: '0 3px 6px #888',
+        boxShadow: '0 10px 10px -10px #000',
         zIndex: 10,
     },
     dsc: {
@@ -164,10 +164,23 @@ export default function Header(props) {
         setShowFilterMenu(true);
         setShowCityMenu(false);
     }
+
+    const ref = useRef();
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (!ref?.current?.contains(event.target)) {
+                setShowCityMenu(false);
+                setShowFilterMenu(false);
+            }
+        };
+        document.addEventListener("mousedown", handleClickOutside);
+    }, [ref]);
+
     return (
         <View style={styles.header}>
             <Text style={styles.dsc}>働きたい日を選択</Text>
-            <View style={styles.box_date}>
+            <View style={styles.box_date} showsHorizontalScrollIndicator={false}>
                 <View style={[styles.item_date, styles.item_date_today]}>
                     <View style={styles.item_date_first}>{dates[0].first}</View>
                     <View style={styles.item_date_second}>{dates[0].second}</View>

@@ -114,7 +114,7 @@ export default function MessageListPage(props) {
                     )
                 }
             </View>
-            <Footer num={1} />
+            <Footer num={4} />
         </View>
     );
 }
