@@ -23,8 +23,9 @@ import CertificatePhotoPage1 from './pages/main/CertificatePhotoPage1';
 import CertificatePhotoPage2 from './pages/main/CertificatePhotoPage2';
 import CertificateEndPage from './pages/main/CertificateEndPage';
 import WorkConformPage from './pages/main/WorkConformPage';
-import MessageListPage from './pages/main/MessageListPage';
-import MessageDetailPage from './pages/main/MessageDetailPage';
+
+import MessageListPage from './pages/message/MessageListPage';
+import MessageDetailPage from './pages/message/MessageDetailPage';
 
 const Stack = createStackNavigator();
 
@@ -32,7 +33,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="WorkListPage"
+        initialRouteName="MessageDetailPage"
         screenOptions={{
           headerShown: false
         }}>

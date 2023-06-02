@@ -1,5 +1,6 @@
 import { Pressable, StyleSheet, Text, TextInput, View, Image } from 'react-native';
-import { useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
+import { LinearGradient } from 'expo-linear-gradient';
 
 import { css } from '../../style';
 import Footer from '../../components/Footer';
@@ -9,7 +10,10 @@ import img_user from '../../assets/user.png';
 import rec from '../../assets/rec.png';
 import camera from '../../assets/camera3.png';
 import emoji from '../../assets/emoji.png';
-
+import photo_real from '../../assets/tmp1.png';
+import btn_gallery from '../../assets/gallery.png';
+import btn_camera from '../../assets/camera4.png';
+import btn_copy from '../../assets/copy.png';
 
 const styles = StyleSheet.create({
     header: {
@@ -129,9 +133,81 @@ const styles = StyleSheet.create({
         width: 26,
         height: 26,
     },
+    popup_img: {
+        width: '100%',
+        height: 550,
+        position: 'fixed',
+        bottom: 0,
+        left: 0,
+        borderRadius: 50,
+        boxShadow: '0 0 10px #888',
+        padding: 25,
+        minHeight: 500,
+        backgroundColor: 'white',
+    },
+    popup_img_inner: {
+        width: 384,
+        height: 500,
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        backgroundColor: '#888',
+        borderRadius: 30,
+        paddingLeft: 25,
+        paddingRight: 25,
+        paddingBottom: 100,
+        display: 'flex',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        overflow: 'auto',
+        position: 'relative',
+    },
+    photo_real: {
+        width: 77,
+        height: 77,
+        margin: 2.5,
+        opacity: .75,
+    },
+    popup_img_box_btn: {
+        position: 'absolute',
+        top: 375,
+        left: 0,
+        right: 0,
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        width: 230,
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+    },
+    btn_gallery: {
+        width: 75,
+        height: 75,
+    },
+    btn_camera: {
+        width: 50,
+        height: 50,
+    },
+    btn_copy: {
+        width: 50,
+        height: 50,
+    },
 });
 
 export default function MessageDetailPage(props) {
+    const array = Array.from(Array(50).keys());
+    const [isShowPopupImg, setShowPopupImg] = useState(false);
+
+    const ref = useRef();
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (!ref?.current?.contains(event.target)) {
+                setShowPopupImg(false);
+            }
+        };
+        document.addEventListener("mousedown", handleClickOutside);
+    }, [ref]);
     return (
         <View style={css.cont_white}>
             <View style={styles.header}>
@@ -161,11 +237,31 @@ export default function MessageDetailPage(props) {
                 <Text style={styles.time_right}>9:37</Text>
             </View>
             <View style={styles.box_input}>
-                <Image source={camera} style={styles.camera} />
+                <Pressable><Image source={emoji} style={styles.emoji} /></Pressable>
                 <TextInput style={styles.input} placeholder="メッセージを入力" />
-                <Image source={emoji} style={styles.emoji} />
+                <Pressable onPress={() => setShowPopupImg(true)}><Image source={camera} style={styles.camera} /></Pressable>
             </View>
-            <Footer num={1} />
+            {
+                isShowPopupImg &&
+                <View style={styles.popup_img}>
+                    <LinearGradient
+                        colors={['white', 'black']}
+                        style={styles.popup_img_inner}
+                    >
+                        {
+                            array.map((item, index) =>
+                                <Image source={photo_real} style={styles.photo_real} key={index} />
+                            )
+                        }
+                    </LinearGradient>
+                    <View style={styles.popup_img_box_btn}>
+                        <Pressable><Image source={btn_gallery} style={styles.btn_gallery} /></Pressable>
+                        <Pressable><Image source={btn_camera} style={styles.btn_camera} /></Pressable>
+                        <Pressable><Image source={btn_copy} style={styles.btn_copy} /></Pressable>
+                    </View>
+                </View>
+            }
+            <Footer num={4} />
         </View>
     );
 }
