@@ -4,25 +4,10 @@ import { useState } from 'react';
 import { css } from '../../style';
 import Footer from '../../components/Footer';
 
-import bg_photo from '../../assets/photo-worker.png';
 import btn_return from '../../assets/return.png';
-import map from '../../assets/map.png';
 import img_triangle from '../../assets/right2.png';
-import mark_qr from '../../assets/qr.png';
-import img_file from '../../assets/file2.png';
-import img_cancel from '../../assets/x.png';
 
 const styles = StyleSheet.create({
-    bg_photo: {
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        width: 428,
-        height: 244,
-        opacity: .09,
-        borderBottomLeftRadius: 10,
-        borderBottomRightRadius: 10,
-    },
     header: {
         display: 'flex',
         flexDirection: 'row',
@@ -34,7 +19,7 @@ const styles = StyleSheet.create({
         height: 27,
     },
     ttl: {
-        marginLeft: 110,
+        marginLeft: 75,
         color: '#303030',
         fontSize: 20,
     },
@@ -45,41 +30,18 @@ const styles = StyleSheet.create({
         marginTop: 18,
         marginLeft: 'auto',
         marginRight: 'auto',
-        paddingTop: 16,
+        paddingTop: 21,
         paddingLeft: 25,
         paddingRight: 25,
-    },
-    box_info: {
-        display: 'flex',
-        flexDirection: 'row',
-        paddingBottom: 18,
-        borderBottomColor: '#2C92D2',
-        borderBottomWidth: 1,
-    },
-    map: {
-        width: 59,
-        height: 59,
-    },
-    txt_map: {
-        marginTop: 3,
-        fontSize: 12,
-        color: '#4D4D4D',
-        fontWeight: 'bold',
-    },
-    box_txt: {
-        marginLeft: 19,
     },
     txt_info: {
         color: '#707070',
         fontSize: 16,
-        width: 250,
+        width: '100%',
         lineHeight: '1.2',
-    },
-    txt_datetime: {
-        marginTop: 5,
-        fontSize: 12,
-        fontWeight: 'bold',
-        color: '#4D4D4D',
+        paddingBottom: 18,
+        borderBottomColor: '#2C92D2',
+        borderBottomWidth: 1,
     },
     box_check: {
         display: 'flex',
@@ -90,10 +52,16 @@ const styles = StyleSheet.create({
         paddingLeft: 10,
         paddingRight: 10,
     },
+    txt_checkinout: {
+        color: '#4D4D4D',
+        fontSize: 15,
+        marginTop: 25,
+    },
     ttl_checkinout: {
         color: '#4D4D4D',
         fontSize: 15,
         fontWeight: 'bold',
+        marginTop: 18,
     },
     date_checkinout: {
         marginTop: 19,
@@ -111,146 +79,127 @@ const styles = StyleSheet.create({
         width: 17,
         height: 24,
     },
-    txt_qr: {
-        marginTop: 29,
-        fontSize: 12,
-        fontWeight: 'bold',
-        color: '#4D4D4D',
-        textAlign: 'center',
-    },
-    btn_qr: {
-        backgroundColor: '#F0BC08',
-        borderRadius: 5,
-        width: 300,
-        height: 52,
-        display: 'flex',
-        marginLeft: 'auto',
-        marginRight: 'auto',
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginTop: 14,
-    },
-    mark_qr: {
-        width: 48,
-        height: 48,
-        marginRight: 3,
-    },
-    txt_btn_qr: {
-        color: '#000',
-        fontSize: 16,
-        fontWeight: 'bold',
-    },
-    box_file: {
-        display: 'flex',
-        flexDirection: 'row',
-        alignItems: 'center',
+    box_breaktime: {
         borderBottomWidth: 1,
         borderTopWidth: 1,
         borderBottomColor: '#2C92D2',
         borderTopColor: '#2C92D2',
-        paddingTop: 19,
-        paddingBottom: 19,
-        marginTop: 30,
-        marginBottom: 19,
+        paddingTop: 20,
+        paddingBottom: 22,
+        marginTop: 37,
+        marginBottom: 20,
+        marginLeft: 5,
     },
-    img_file: {
-        width: 16,
-        height: 20,
-        marginLeft: 10,
-    },
-    txt_file: {
-        fontSize: 12,
-        fontWeight: 'bold',
+    ttl_breaktime: {
         color: '#4D4D4D',
-        marginLeft: 15,
+        fontSize: 15,
     },
-    box_cancel: {
+    txt_breaktime: {
+        color: '#4D4D4D',
+        fontSize: 15,
+        fontWeight: 'bold',
+        marginTop: 9,
+    },
+    ttl_money: {
+        marginTop: 20,
+        fontSize: 15,
+        color: '#4D4D4D',
+    },
+    row_money: {
+        width: 306,
         display: 'flex',
         flexDirection: 'row',
-        alignItems: 'center',
+        justifyContent: 'space-between',
+        marginTop: 15,
     },
-    img_cancel: {
-        width: 16,
-        height: 16,
-        marginLeft: 10,
-    },
-    txt_cancel: {
+    left_money: {
+        color: '#4D4D4D',
         fontSize: 12,
         fontWeight: 'bold',
-        color: '#4D4D4D',
-        marginLeft: 15,
     },
-    txt_contact: {
-        marginTop: 19,
-        paddingTop: 39,
-        borderTopColor: '#2C92D2',
-        borderTopWidth: 1,
+    right_money: {
+        color: '#4D4D4D',
         fontSize: 12,
         fontWeight: 'bold',
-        color: '#4D4D4D',
-        marginBottom: 4,
-        textAlign: 'center',
+        fontStyle: 'italic',
     },
-    txt_phonenumber: {
-        color: '#4D4D4D99',
-        textAlign: 'center',
+    row_money_last: {
+        width: 306,
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginTop: 30,
+        position: 'relative',
+        marginBottom: 36,
+    },
+    right_money_last: {
+        color: '#4D4D4D',
+        fontSize: 16,
+    },
+    btn_go: {
+        width: 300,
+        height: 52,
+        borderRadius: 5,
+        backgroundColor: '#172B4D',
+        color: 'white',
         fontWeight: 'bold',
         fontSize: 16,
-        marginBottom: 100,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginBottom: 28,
+        marginLeft: 'auto',
+        marginRight: 'auto',
     },
 });
 
 export default function SalaryFinalConformPage(props) {
-    const [isCheckinModal, setCheckinModal] = useState(true);
     return (
         <View style={css.cont_white}>
-            <Image source={bg_photo} style={styles.bg_photo} />
             <View style={styles.header}>
                 <Pressable>
                     <Image source={btn_return} style={styles.btn_return} />
                 </Pressable>
-                <Text style={styles.ttl}>はたらく</Text>
+                <Text style={styles.ttl}>報酬額の最終確認</Text>
             </View>
             <View style={styles.board}>
-                <View style={styles.box_info}>
-                    <View style={styles.box_map}>
-                        <Image source={map} style={styles.map} />
-                        <Text style={styles.txt_map}>場所を確認</Text>
-                    </View>
-                    <View style={styles.box_txt}>
-                        <Text style={styles.txt_info}>ここに求人タイトルここに求人タイトルここに求人タイトルここに求人タイトルここに求人タイトル</Text>
-                        <Text style={styles.txt_datetime}>2023年5月17日(水) 6:00〜16:00 (休憩あり)</Text>
-                    </View>
-                </View>
+                <Text style={styles.txt_info}>以下の内容で業務と報酬を確定します。最後にもう一度内容を確認してください。</Text>
                 <View style={styles.box_check}>
                     <View style={styles.box_checkinout}>
+                        <Text style={styles.txt_checkinout}>業務開始</Text>
                         <Text style={styles.ttl_checkinout}>チェックイン</Text>
-                        <Text style={styles.date_checkinout}>-月-日(-)</Text>
-                        <Text style={styles.time_checkinout}>—:--</Text>
+                        <Text style={styles.date_checkinout}>5月25日(月)</Text>
+                        <Text style={styles.time_checkinout}>16:00</Text>
                     </View>
                     <Image source={img_triangle} style={styles.img_triangle} />
                     <View style={styles.box_checkinout}>
+                        <Text style={styles.txt_checkinout}>業務終了</Text>
                         <Text style={styles.ttl_checkinout}>チェックイン</Text>
-                        <Text style={styles.date_checkinout}>-月-日(-)</Text>
-                        <Text style={styles.time_checkinout}>—:--</Text>
+                        <Text style={styles.date_checkinout}>5月25日(月)</Text>
+                        <Text style={styles.time_checkinout}>22:00</Text>
                     </View>
                 </View>
-                <Text style={styles.txt_qr}>仕事をはじめる/おわるときにQRコードを読み込む</Text>
-                <View style={styles.btn_qr}>
-                    <Image source={mark_qr} style={styles.mark_qr} />
-                    <Text style={styles.txt_btn_qr}>QRを読み込む</Text>
+                <View style={styles.box_breaktime}>
+                    <Text style={styles.ttl_breaktime}>休憩時間</Text>
+                    <Text style={styles.txt_breaktime}>30分</Text>
+                </View><Text style={styles.ttl_money}>報酬内訳</Text>
+                <View style={styles.row_money}>
+                    <Text style={styles.left_money}>時給</Text>
+                    <Text style={styles.right_money}>1,200円 / 1時間</Text>
                 </View>
-                <View style={styles.box_file}>
-                    <Image source={img_file} style={styles.img_file} />
-                    <Text style={styles.txt_file}>募集詳細</Text>
+                <View style={styles.row_money}>
+                    <Text style={styles.left_money}>基本給</Text>
+                    <Text style={styles.right_money}>7,000円</Text>
                 </View>
-                <View style={styles.box_cancel}>
-                    <Image source={img_cancel} style={styles.img_cancel} />
-                    <Text style={styles.txt_cancel}>このお仕事をキャンセル</Text>
+                <View style={styles.row_money}>
+                    <Text style={styles.left_money}>交通費</Text>
+                    <Text style={styles.right_money}>1,000円</Text>
                 </View>
-                <Text style={styles.txt_contact}>緊急連絡先</Text>
-                <Text style={styles.txt_phonenumber}>000-0000-0000</Text>
+                <View style={styles.row_money_last}>
+                    <Text style={styles.left_money}>支払われる報酬総額</Text>
+                    <Text style={styles.right_money_last}>8,000円</Text>
+                </View>
+                <View style={styles.btn_go}>次へ進む</View>
             </View>
             <Footer num={3} />
         </View>
