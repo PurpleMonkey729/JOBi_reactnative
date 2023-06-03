@@ -71,27 +71,29 @@ const styles = StyleSheet.create({
 
 export default function CertificatePage(props) {
     return (
-        <View style={[css.cont_white, styles.cont]}>
-            <Pressable>
-                <Image source={btn_return} style={styles.btn_return} />
-            </Pressable>
-            <Text style={styles.ttl}>登録したい本人確認書類を選択</Text>
-            <Text style={styles.dsc}>JOBiで働くには書類を登録して、本人確認する必要があります。ここで入力した本人確認書類の情報が他のユーザーに公開されることはありません。</Text>
-            <View style={styles.item}>
-                <Image source={cer1} style={styles.img1} />
-                <Text style={styles.txt_item}>パスポート（所持人記入欄があるもの）</Text>
-            </View>
-            <View style={styles.item}>
-                <Image source={cer2} style={styles.img2} />
-                <Text style={styles.txt_item}>運転免許証</Text>
-            </View>
-            <View style={styles.item}>
-                <Image source={cer3} style={styles.img3} />
-                <Text style={styles.txt_item}>マイナンバーカード</Text>
-            </View>
-            <View style={styles.item}>
-                <Image source={cer4} style={styles.img4} />
-                <Text style={styles.txt_item}>住民基本台帳カード（顔写真付きのもの）</Text>
+        <View style={css.cont_white}>
+            <View style={styles.cont}>
+                <Pressable>
+                    <Image source={btn_return} style={styles.btn_return} />
+                </Pressable>
+                <Text style={styles.ttl}>登録したい本人確認書類を選択</Text>
+                <Text style={styles.dsc}>JOBiで働くには書類を登録して、本人確認する必要があります。ここで入力した本人確認書類の情報が他のユーザーに公開されることはありません。</Text>
+                <View style={styles.item}>
+                    <Image source={cer1} style={styles.img1} />
+                    <Text style={styles.txt_item}>パスポート（所持人記入欄があるもの）</Text>
+                </View>
+                <View style={styles.item}>
+                    <Image source={cer2} style={styles.img2} />
+                    <Text style={styles.txt_item}>運転免許証</Text>
+                </View>
+                <View style={styles.item}>
+                    <Image source={cer3} style={styles.img3} />
+                    <Text style={styles.txt_item}>マイナンバーカード</Text>
+                </View>
+                <View style={styles.item}>
+                    <Image source={cer4} style={styles.img4} />
+                    <Text style={styles.txt_item}>住民基本台帳カード（顔写真付きのもの）</Text>
+                </View>
             </View>
             <Footer num={1} />
         </View>

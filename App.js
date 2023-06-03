@@ -27,13 +27,17 @@ import WorkConformPage from './pages/main/WorkConformPage';
 import MessageListPage from './pages/message/MessageListPage';
 import MessageDetailPage from './pages/message/MessageDetailPage';
 
+import WorkContractListPage from './pages/work/WorkContractListPage';
+import PastHirePage from './pages/work/PastHirePage';
+import WorkQRPage from './pages/work/WorkQRPage';
+
 const Stack = createStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="MessageDetailPage"
+        initialRouteName="WorkQRPage"
         screenOptions={{
           headerShown: false
         }}>
@@ -58,6 +62,9 @@ export default function App() {
         <Stack.Screen name="WorkConformPage" component={WorkConformPage} />
         <Stack.Screen name="MessageListPage" component={MessageListPage} />
         <Stack.Screen name="MessageDetailPage" component={MessageDetailPage} />
+        <Stack.Screen name="WorkContractListPage" component={WorkContractListPage} />
+        <Stack.Screen name="PastHirePage" component={PastHirePage} />
+        <Stack.Screen name="WorkQRPage" component={WorkQRPage} />
       </Stack.Navigator>
     </NavigationContainer>
   );
