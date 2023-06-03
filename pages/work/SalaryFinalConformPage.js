@@ -199,78 +199,12 @@ const styles = StyleSheet.create({
         fontSize: 16,
         marginBottom: 100,
     },
-    bg_modal: {
-        backgroundColor: '#B5B5B5aa',
-        position: 'fixed',
-        width: '100vw',
-        height: '100vh',
-        top: 0,
-        left: 0,
-        zIndex: 999,
-    },
-    modal: {
-        marginTop: 289,
-        marginLeft: 'auto',
-        marginRight: 'auto',
-        width: 270,
-        borderRadius: 14,
-        backgroundColor: '#F2F2F2dd',
-    },
-    txt_modal: {
-        color: '#000',
-        fontWeight: 'bold',
-        fontSize: 17,
-        textAlign: 'center',
-        marginTop: 19,
-        marginBottom: 19,
-    },
-    box_modal_btn: {
-        width: '100%',
-        height: '100%',
-        borderTopColor: '#888',
-        borderTopWidth: 1,
-        display: 'flex',
-        flexDirection: 'row',
-        height: 44,
-    },
-    btn_modal_left: {
-        width: '50%',
-        height: '100%',
-        color: '#007AFF',
-        fontSize: 17,
-        borderRightColor: '#888',
-        borderRightWidth: 1,
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    btn_modal_right: {
-        width: '50%',
-        height: '100%',
-        color: '#007AFF',
-        fontSize: 17,
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
 });
 
-export default function WorkQRPage(props) {
+export default function SalaryFinalConformPage(props) {
     const [isCheckinModal, setCheckinModal] = useState(true);
     return (
         <View style={css.cont_white}>
-            <View style={styles.bg_modal}>
-                <View style={styles.modal}>
-                    {
-                        isCheckinModal && <Text style={styles.txt_modal}>本当にチェックイン<br />しますか？</Text> ||
-                        !isCheckinModal && <Text style={styles.txt_modal}>本当にチェックアウト<br />しますか？</Text>
-                    }
-                    <View style={styles.box_modal_btn}>
-                        <Text style={styles.btn_modal_left}>もどる</Text>
-                        <Text style={styles.btn_modal_right}>OK</Text>
-                    </View>
-                </View>
-            </View>
             <Image source={bg_photo} style={styles.bg_photo} />
             <View style={styles.header}>
                 <Pressable>
