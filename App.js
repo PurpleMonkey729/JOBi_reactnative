@@ -36,6 +36,11 @@ import WorkEndPage from './pages/work/WorkEndPage';
 
 import TransferAccountPage from './pages/mine/TransferAccountPage';
 import ContactPage from './pages/mine/ContactPage';
+import MySkillPage from './pages/mine/MySkillPage';
+import MyPage from './pages/mine/MyPage';
+
+import FavouriteShopPage from './pages/favourite/FavouriteShopPage';
+import FavouriteShopDetailPage from './pages/favourite/FavouriteShopDetailPage';
 
 const Stack = createStackNavigator();
 
@@ -43,7 +48,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="ContactPage"
+        initialRouteName="MyPage"
         screenOptions={{
           headerShown: false
         }}>
@@ -76,6 +81,10 @@ export default function App() {
         <Stack.Screen name="WorkEndPage" component={WorkEndPage} />
         <Stack.Screen name="TransferAccountPage" component={TransferAccountPage} />
         <Stack.Screen name="ContactPage" component={ContactPage} />
+        <Stack.Screen name="MySkillPage" component={MySkillPage} />
+        <Stack.Screen name="MyPage" component={MyPage} />
+        <Stack.Screen name="FavouriteShopPage" component={FavouriteShopPage} />
+        <Stack.Screen name="FavouriteShopDetailPage" component={FavouriteShopDetailPage} />
       </Stack.Navigator>
     </NavigationContainer>
   );

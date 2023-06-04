@@ -45,6 +45,7 @@ const styles = StyleSheet.create({
         marginTop: 14,
         marginLeft: 'auto',
         marginRight: 'auto',
+        fontSize: 16,
     },
     btn_go: {
         width: 212,
@@ -116,7 +117,7 @@ const styles = StyleSheet.create({
     },
 });
 
-export default function TransferAccountPage(props) {
+export default function ContactPage(props) {
     const [isShowModal, setShowModal] = useState(false);
     return (
         <View style={css.cont_white}>
