@@ -256,21 +256,24 @@ const styles = StyleSheet.create({
 });
 
 export default function WorkQRPage(props) {
-    const [isCheckinModal, setCheckinModal] = useState(true);
+    const [isCheckinModal, setCheckinModal] = useState(false);
     return (
         <View style={css.cont_white}>
-            <View style={styles.bg_modal}>
-                <View style={styles.modal}>
-                    {
-                        isCheckinModal && <Text style={styles.txt_modal}>本当にチェックイン<br />しますか？</Text> ||
-                        !isCheckinModal && <Text style={styles.txt_modal}>本当にチェックアウト<br />しますか？</Text>
-                    }
-                    <View style={styles.box_modal_btn}>
-                        <Text style={styles.btn_modal_left}>もどる</Text>
-                        <Text style={styles.btn_modal_right}>OK</Text>
+            {
+                isCheckinModal &&
+                <View style={styles.bg_modal}>
+                    <View style={styles.modal}>
+                        {
+                            isCheckinModal && <Text style={styles.txt_modal}>本当にチェックイン<br />しますか？</Text> ||
+                            !isCheckinModal && <Text style={styles.txt_modal}>本当にチェックアウト<br />しますか？</Text>
+                        }
+                        <View style={styles.box_modal_btn}>
+                            <Text style={styles.btn_modal_left}>もどる</Text>
+                            <Text style={styles.btn_modal_right}>OK</Text>
+                        </View>
                     </View>
                 </View>
-            </View>
+            }
             <Image source={bg_photo} style={styles.bg_photo} />
             <View style={styles.header}>
                 <Pressable>

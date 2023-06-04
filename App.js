@@ -31,6 +31,7 @@ import WorkContractListPage from './pages/work/WorkContractListPage';
 import PastHirePage from './pages/work/PastHirePage';
 import WorkQRPage from './pages/work/WorkQRPage';
 import SalaryFinalConformPage from './pages/work/SalaryFinalConformPage';
+import ReviewInputPage from './pages/work/ReviewInputPage';
 
 const Stack = createStackNavigator();
 
@@ -38,7 +39,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="SalaryFinalConformPage"
+        initialRouteName="ReviewInputPage"
         screenOptions={{
           headerShown: false
         }}>
@@ -67,6 +68,7 @@ export default function App() {
         <Stack.Screen name="PastHirePage" component={PastHirePage} />
         <Stack.Screen name="WorkQRPage" component={WorkQRPage} />
         <Stack.Screen name="SalaryFinalConformPage" component={SalaryFinalConformPage} />
+        <Stack.Screen name="ReviewInputPage" component={ReviewInputPage} />
       </Stack.Navigator>
     </NavigationContainer>
   );
