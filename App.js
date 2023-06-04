@@ -14,15 +14,15 @@ import RegistPage3    from './pages/auth/RegistPage3';
 import RegistPage4    from './pages/auth/RegistPage4';
 import RegistEndPage  from './pages/auth/RegistEndPage';
 
-import LoadingPage    from './pages/main/LoadingPage';
-import FailedPage     from './pages/main/FailedPage';
-import WorkListPage   from './pages/main/WorkListPage';
-import WorkDetailPage from './pages/main/WorkDetailPage';
-import CertificatePage from './pages/main/CertificatePage';
-import CertificatePhotoPage1 from './pages/main/CertificatePhotoPage1';
-import CertificatePhotoPage2 from './pages/main/CertificatePhotoPage2';
-import CertificateEndPage from './pages/main/CertificateEndPage';
-import WorkConformPage from './pages/main/WorkConformPage';
+import LoadingPage    from './pages/search/LoadingPage';
+import FailedPage     from './pages/search/FailedPage';
+import WorkListPage   from './pages/search/WorkListPage';
+import WorkDetailPage from './pages/search/WorkDetailPage';
+import CertificatePage from './pages/search/CertificatePage';
+import CertificatePhotoPage1 from './pages/search/CertificatePhotoPage1';
+import CertificatePhotoPage2 from './pages/search/CertificatePhotoPage2';
+import CertificateEndPage from './pages/search/CertificateEndPage';
+import WorkConformPage from './pages/search/WorkConformPage';
 
 import MessageListPage from './pages/message/MessageListPage';
 import MessageDetailPage from './pages/message/MessageDetailPage';
@@ -34,13 +34,16 @@ import SalaryFinalConformPage from './pages/work/SalaryFinalConformPage';
 import ReviewInputPage from './pages/work/ReviewInputPage';
 import WorkEndPage from './pages/work/WorkEndPage';
 
+import TransferAccountPage from './pages/mine/TransferAccountPage';
+import ContactPage from './pages/mine/ContactPage';
+
 const Stack = createStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="WorkEndPage"
+        initialRouteName="ContactPage"
         screenOptions={{
           headerShown: false
         }}>
@@ -71,6 +74,8 @@ export default function App() {
         <Stack.Screen name="SalaryFinalConformPage" component={SalaryFinalConformPage} />
         <Stack.Screen name="ReviewInputPage" component={ReviewInputPage} />
         <Stack.Screen name="WorkEndPage" component={WorkEndPage} />
+        <Stack.Screen name="TransferAccountPage" component={TransferAccountPage} />
+        <Stack.Screen name="ContactPage" component={ContactPage} />
       </Stack.Navigator>
     </NavigationContainer>
   );
