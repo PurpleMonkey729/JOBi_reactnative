@@ -1,81 +1,130 @@
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, Pressable, TextInput } from 'react-native';
+import { useState } from 'react';
 
 import { css } from '../../style';
 import Footer from '../../components/Footer';
 
-import img_logo from '../../assets/logo2.png';
-import img_mid from '../../assets/work_end.png';
+import btn_return from '../../assets/return.png';
+import star from '../../assets/star.png';
 
 const styles = StyleSheet.create({
-    cont: {
+    header: {
+        paddingTop: 33,
+        paddingLeft: 31,
+        paddingBottom: 5,
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        borderBottomWidth: 9,
+        borderBottomColor: '#eee',
+    },
+    btn_return: {
+        width: 27,
+        height: 27,
+    },
+    ttl: {
+        marginLeft: 49,
+        color: '#303030',
+        fontSize: 18,
+        fontWeight: 'bold',
+    },
+    board: {
         backgroundColor: 'white',
-    },
-    img_logo: {
-        width: 355,
-        height: 141,
+        width: 374,
+        padding: 20,
         marginLeft: 'auto',
         marginRight: 'auto',
-        marginTop: 47,
+        marginTop: 30,
+        boxShadow: '0 3px 6px #ddd',
     },
-    txt1: {
-        color: '#303030',
-        fontSize: 22,
-        marginTop: 26,
-        textAlign: 'center',
+    box_txt: {
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
     },
-    txt2: {
-        color: '#303030',
-        fontSize: 37,
-        marginTop: 9,
-        textAlign: 'center',
+    star: {
+        width: 20,
+        height: 19,
     },
-    txt3: {
-        color: '#303030',
-        fontSize: 22,
-        marginTop: 3,
-        textAlign: 'center',
+    txt_skillname: {
+        color: '#333333',
+        fontSize: 15,
+        marginLeft: 19,
     },
-    img_mid: {
-        width: 287,
-        height: 215,
-        marginLeft: 'auto',
-        marginRight: 'auto',
+    txt_skilllevel: {
+        color: '#333333',
+        fontSize: 15,
+        marginLeft: 87,
     },
-    btn_yellow: {
-        backgroundColor: '#FFC602',
+    box_input: {
+        marginTop: 22,
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+    },
+    input_left: {
+        width: 197,
+        height: 42,
+        borderColor: '#BEBEBE',
+        borderWidth: 1,
         borderRadius: 5,
-        width: 300,
-        height: 72,
-        marginTop: 26,
+        fontSize: 16,
+        paddingLeft: 23,
+        paddingRight: 23,
+    },
+    input_right: {
+        width: 120,
+        height: 42,
+        borderColor: '#BEBEBE',
+        borderWidth: 1,
+        borderRadius: 5,
+        fontSize: 16,
+        paddingLeft: 23,
+        paddingRight: 23,
+    },
+    btn_go: {
+        width: 332,
+        height: 48,
+        borderRadius: 5,
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        fontSize: 18,
+        color: 'white',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        marginLeft: 'auto',
-        marginRight: 'auto',
+        marginTop: 16,
+        backgroundColor: '#2C92D2',
     },
-    txt_btn_1: {
-        fontSize: 16,
-        color: 'black',
-    },
-    txt_btn_2: {
-        color: '#676767',
-        fontSize: 12,
-    }
 });
 
-export default function WorkEndPage(props) {
+export default function MySkillPage(props) {
+    const array = [1,2,3,4,5,6];
     return (
-        <View style={[css.cont_white, styles.cont]}>
-            <Image source={img_logo} style={styles.img_logo} />
-            <Text style={styles.txt1}>報酬が確定しました！</Text>
-            <Image source={img_mid} style={styles.img_mid} />
-            <Text style={styles.txt2}>8,000円</Text>
-            <Text style={styles.txt3}>お疲れ様でした。</Text>
-            <View style={styles.btn_yellow}>
-                <Text style={styles.txt_btn_1}>振り込み予定を見る</Text>
-                <Text style={styles.txt_btn_2}>マイページへ</Text>
+        <View style={css.cont_white}>
+            <View style={styles.header}>
+                <Pressable>
+                    <Image source={btn_return} style={styles.btn_return} />
+                </Pressable>
+                <Text style={styles.ttl}>あなたのスキルを追加する</Text>
             </View>
-            <Footer num={3} />
+            <View style={styles.board}>
+                <View style={styles.box_txt}>
+                    <Image source={star} style={styles.star} />
+                    <Text style={styles.txt_skillname}>スキルの名前</Text>
+                    <Text style={styles.txt_skilllevel}>スキルのレベル</Text>
+                </View>
+                {
+                    array.map((item, index)=>
+                        <View style={styles.box_input} key={index}>
+                            <TextInput style={styles.input_left} placeholder="入力" placeholderTextColor="#9B9B9B" />
+                            <TextInput style={styles.input_right} placeholder="1~10" placeholderTextColor="#9B9B9B" />
+                        </View>
+                    )
+                }
+                <Text style={styles.btn_go}>スキルの追加・変更</Text>
+            </View>
+            <Footer num={5} />
         </View >
     );
 }

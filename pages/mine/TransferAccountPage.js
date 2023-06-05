@@ -46,6 +46,7 @@ const styles = StyleSheet.create({
         marginTop: 14,
         marginLeft: 'auto',
         marginRight: 'auto',
+        fontSize: 16,
     },
     btn_go: {
         width: 212,
