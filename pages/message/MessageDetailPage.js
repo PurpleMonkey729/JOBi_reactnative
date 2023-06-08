@@ -2,7 +2,7 @@ import { Pressable, StyleSheet, Text, TextInput, View, Image } from 'react-nativ
 import { useRef, useState, useEffect } from 'react';
 import { LinearGradient } from 'expo-linear-gradient';
 
-import { css } from '../../style';
+import { css, cutString } from '../../style';
 import Footer from '../../components/Footer';
 
 import btn_return from '../../assets/next.png';
@@ -20,10 +20,14 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
-        height: 89,
+        height: "max-content",
         paddingLeft: 25,
         paddingRight: 25,
         backgroundColor: 'white',
+        position: 'fixed',
+        zIndex: 10,
+        width: 428,
+        height: 97,
     },
     btn_return: {
         width: 25,
@@ -41,6 +45,8 @@ const styles = StyleSheet.create({
     ttl: {
         color: '#2C92D2',
         fontSize: 16,
+        width: 225,
+        wordBreak: 'break-word',
     },
     name: {
         color: '#303030',
@@ -55,7 +61,7 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     },
     board: {
-        paddingTop: 13,
+        paddingTop: 110,
         paddingLeft: 20,
         paddingRight: 20,
         paddingBottom: 70,
@@ -117,7 +123,13 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         position: 'absolute',
         left: 0,
+        right: 0,
+        marginLeft: 'auto',
+        marginRight: 'auto',
         bottom: 84,
+        position: 'fixed',
+        zIndex: 10,
+        width: 428,
     },
     camera: {
         width: 26,
@@ -216,7 +228,7 @@ export default function MessageDetailPage(props) {
                 </Pressable>
                 <Image source={img_user} style={styles.img_user} />
                 <View style={styles.box_txt}>
-                    <Text style={styles.ttl}>5月17日求人タイトル</Text>
+                    <Text style={styles.ttl}>{cutString('5月17日求人タイトル5月17日求人タイトル5月17日求人タイトル5月17日求人タイトル5月17日求人タイトル5月17日求人タイトル5月17日求人タイトル5月17日求人タイトル5月17日求人タイトル5月17日求人タイトル5月17日求人タイトル', 15)}</Text>
                     <Text style={styles.name}>店舗名</Text>
                 </View>
                 <View style={styles.btn_more}>.<br />.<br />.</View>
