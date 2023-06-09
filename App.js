@@ -33,6 +33,7 @@ import WorkQRPage from './pages/work/WorkQRPage';
 import SalaryFinalConformPage from './pages/work/SalaryFinalConformPage';
 import ReviewInputPage from './pages/work/ReviewInputPage';
 import WorkEndPage from './pages/work/WorkEndPage';
+import GetQRPage from './pages/work/GetQRPage';
 
 import TransferAccountPage from './pages/mine/TransferAccountPage';
 import ContactPage from './pages/mine/ContactPage';
@@ -48,7 +49,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="MessageListPage"
+        initialRouteName="GetQRPage"
         screenOptions={{
           headerShown: false
         }}>
@@ -76,6 +77,7 @@ export default function App() {
         <Stack.Screen name="WorkContractListPage" component={WorkContractListPage} />
         <Stack.Screen name="PastHirePage" component={PastHirePage} />
         <Stack.Screen name="WorkQRPage" component={WorkQRPage} />
+        <Stack.Screen name="GetQRPage" component={GetQRPage} />
         <Stack.Screen name="SalaryFinalConformPage" component={SalaryFinalConformPage} />
         <Stack.Screen name="ReviewInputPage" component={ReviewInputPage} />
         <Stack.Screen name="WorkEndPage" component={WorkEndPage} />
