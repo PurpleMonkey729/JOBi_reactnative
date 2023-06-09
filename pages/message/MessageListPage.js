@@ -1,7 +1,7 @@
 import { Pressable, StyleSheet, Text, TextInput, View, Image } from 'react-native';
 import { useState } from 'react';
 
-import { css } from '../../style';
+import { css, cutString } from '../../style';
 import Footer from '../../components/Footer';
 
 import btn_search from '../../assets/search.png';
@@ -37,11 +37,12 @@ const styles = StyleSheet.create({
     msg: {
         display: 'flex',
         flexDirection: 'row',
-        height: 100,
         width: '100%',
         borderBottomWidth: 1,
         borderBottomColor: '#2C92D2',
         marginTop: 17.5,
+        paddingTop: 10,
+        paddingBottom: 20,
     },
     img_user: {
         width: 78,
@@ -49,6 +50,8 @@ const styles = StyleSheet.create({
         marginRight: 12,
     },
     ttl: {
+        width: 225,
+        wordBreak: 'break-word',
         fontSize: 16,
         color: '#2C92D2',
     },
@@ -85,7 +88,7 @@ const styles = StyleSheet.create({
 
 export default function MessageListPage(props) {
     const messages = [
-        { photo: img_user, ttl: '5月17日求人タイトル', name: '店舗名', txt: 'まだメッセージはありません。', time: '9:39', num: 2 },
+        { photo: img_user, ttl: '5月17日求人タイトルありがとうございます。', name: '店舗名', txt: 'まだメッセージはありません。', time: '9:39', num: 2 },
         { photo: img_user, ttl: '5月17日求人タイトル', name: '店舗名', txt: 'まだメッセージはありません。', time: '9:39', num: 1 },
     ];
     return (
@@ -98,7 +101,7 @@ export default function MessageListPage(props) {
             </View>
             <View style={styles.box_list}>
                 {
-                    messages.map((item, index) => 
+                    messages.map((item, index) =>
                         <View style={styles.msg}>
                             <Image source={item.photo} style={styles.img_user} />
                             <View style={styles.box_txt}>

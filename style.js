@@ -1,5 +1,12 @@
 import { StyleSheet } from "react-native";
 
+export const cutString = (str, len) => {
+    if (str.length <= len)
+        return str;
+    else
+        return str.substring(0, len) + "...";
+}
+
 export const css = StyleSheet.create({
     cont_blue: {
         width: 428,
@@ -7,8 +14,8 @@ export const css = StyleSheet.create({
         marginRight: 'auto',
         backgroundColor: '#2C92D2',
         fontFamily: 'Arial',
-        height: '100%',
-        minHeight: '100vh',
+        height: '100vh',
+        minHeight: 926,
         position: 'relative',
     },
     cont_white_header: {
@@ -18,8 +25,8 @@ export const css = StyleSheet.create({
         marginLeft: 'auto',
         marginRight: 'auto',
         fontFamily: 'Arial',
-        height: '100%',
-        minHeight: '100vh',
+        height: '100vh',
+        minHeight: 926,
         position: 'relative',
         backgroundColor: '#F6F9FC'
     },
@@ -29,8 +36,8 @@ export const css = StyleSheet.create({
         marginLeft: 'auto',
         marginRight: 'auto',
         fontFamily: 'Arial',
-        height: '100%',
-        minHeight: '100vh',
+        height: '100vh',
+        minHeight: 926,
         position: 'relative',
         backgroundColor: '#F6F9FC'
     },
@@ -39,8 +46,8 @@ export const css = StyleSheet.create({
         marginLeft: 'auto',
         marginRight: 'auto',
         fontFamily: 'Arial',
-        height: '100%',
-        minHeight: '100vh',
+        height: '100vh',
+        minHeight: 926,
         position: 'relative',
         backgroundColor: '#F6F9FC',
     },

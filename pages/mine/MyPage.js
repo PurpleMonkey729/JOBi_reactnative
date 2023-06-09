@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, Image, Pressable, TextInput } from 'react-native';
 import { useState } from 'react';
 
-import { css } from '../../style';
+import { css, cutString } from '../../style';
 import Footer from '../../components/Footer';
 
 import btn_return from '../../assets/return.png';
@@ -385,6 +385,7 @@ export default function MyPage(props) {
     const showReviewMore = index => {
         setShowReviewMoreIndex(index);
     }
+
     return (
         <View style={css.cont_white}>
             <View style={styles.header}>
@@ -475,7 +476,7 @@ export default function MyPage(props) {
                                     }
                                 </View>
                                 {
-                                    !showReviewMoreIndex == index && <Text style={styles.txt_more}>More...</Text>
+                                    showReviewMoreIndex != index && <Text style={styles.txt_more}>{cutString(item.txt, 5)}</Text>
                                 }
                                 <Pressable onPress={() => showReviewMore(index)} style={{marginLeft: 'auto'}}>
                                     <Image source={btn_showmore} style={[styles.btn_showmore, showReviewMoreIndex == index && styles.btn_showmore_active]} />

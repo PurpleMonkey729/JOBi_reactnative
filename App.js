@@ -48,7 +48,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="MyPage"
+        initialRouteName="MessageListPage"
         screenOptions={{
           headerShown: false
         }}>
