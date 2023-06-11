@@ -25,7 +25,6 @@ export const css = StyleSheet.create({
         marginLeft: 'auto',
         marginRight: 'auto',
         fontFamily: 'Arial',
-        height: '100vh',
         minHeight: 926,
         position: 'relative',
         backgroundColor: '#F6F9FC'
@@ -36,7 +35,6 @@ export const css = StyleSheet.create({
         marginLeft: 'auto',
         marginRight: 'auto',
         fontFamily: 'Arial',
-        height: '100vh',
         minHeight: 926,
         position: 'relative',
         backgroundColor: '#F6F9FC'
@@ -46,7 +44,6 @@ export const css = StyleSheet.create({
         marginLeft: 'auto',
         marginRight: 'auto',
         fontFamily: 'Arial',
-        height: '100vh',
         minHeight: 926,
         position: 'relative',
         backgroundColor: '#F6F9FC',
