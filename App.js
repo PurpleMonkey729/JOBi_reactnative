@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import './App.css';
 
 import IntroPage1 from './pages/intro/IntroPage1';
 import IntroPage2 from './pages/intro/IntroPage2';
@@ -49,7 +50,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="GetQRPage"
+        initialRouteName="WorkListPage"
         screenOptions={{
           headerShown: false
         }}>
