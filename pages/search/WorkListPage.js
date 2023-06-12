@@ -207,7 +207,7 @@ const AnimCircle = props => {
 
 export default function WorkListPage(props) {
     const array = Array.from(Array(9).keys()).map(el=>'circle'+el);
-    const [ready, setReady] = useState(false);
+    const [ready, setReady] = useState(true);
     const tmp_price = 5000;
     const data = [
         {

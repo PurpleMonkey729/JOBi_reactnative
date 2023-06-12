@@ -1,0 +1,10 @@
+.footer_item_active {
+    animation: anim_navitem 1s;
+}
+
+@keyframes anim_navitem {
+    0% {scale: 1; opacity: 1}
+    33% {scale: .5; opacity: 1}
+    66% {scale: 1.5; opacity: .1}
+    100% {scale: 1; opacity: 1}
+}
