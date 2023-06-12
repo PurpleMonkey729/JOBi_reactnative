@@ -9,13 +9,13 @@ export const cutString = (str, len) => {
 
 export const css = StyleSheet.create({
     cont_blue: {
-        width: 428,
+        width: '428rem',
         marginLeft: 'auto',
         marginRight: 'auto',
         backgroundColor: '#2C92D2',
         fontFamily: 'Arial',
         height: '100vh',
-        minHeight: 926,
+        height: '926rem',
         position: 'relative',
     },
     cont_white_header: {
