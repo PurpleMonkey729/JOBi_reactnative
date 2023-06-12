@@ -11,53 +11,53 @@ import btn_goal from '../../assets/btn-goal.png';
 
 const styles = StyleSheet.create({
     bg: {
-        width: 428,
-        height: 926,
+        width: '428rem',
+        height: '926rem',
     },
     header: {
-        marginTop: 43,
-        marginLeft: 51,
+        marginTop: '43rem',
+        marginLeft: '51rem',
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
     },
     img_logo: {
-        width: 187,
-        height: 75,
+        width: '187rem',
+        height: '75rem',
     },
     btn_skip: {
-        marginLeft: 99,
-        fontSize: 15.5,
+        marginLeft: '99rem',
+        fontSize: '15rem',
         color: 'white',
     },
     txt_box: {
-        marginTop: 471,
-        marginLeft: 53,
+        marginTop: '471rem',
+        marginLeft: '53rem',
     },
     ttl: {
-        marginBottom: 16,
+        marginBottom: '16rem',
         color: '#E1FA08',
-        fontSize: 37,
+        fontSize: '37rem',
     },
     txt: {
         color: 'white',
-        fontSize: 14,
+        fontSize: '14rem',
     },
     btn_next: {
-        marginTop: 40,
-        marginLeft: 335,
+        marginTop: '40rem',
+        marginLeft: '335rem',
     },
     btn: {
-        marginTop: 40,
-        marginLeft: 335,
-        width: 65,
-        height: 65,
+        marginTop: '40rem',
+        marginLeft: '335rem',
+        width: '65rem',
+        height: '65rem',
     },
     num: {
-        marginTop: 12,
-        marginLeft: 356,
+        marginTop: '12rem',
+        marginLeft: '356rem',
         color: 'white',
-        fontSize: 14,
+        fontSize: '14rem',
     },
 });
 

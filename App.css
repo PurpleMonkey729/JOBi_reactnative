@@ -17,3 +17,13 @@
     0% {margin-top: 100vh}
     100% {margin-top: 0}
 }
+
+html {
+    font-size: calc(100vw/428);
+}
+
+@media (min-width: 429px) {
+    html {
+        font-size: 1px;
+    }
+}
