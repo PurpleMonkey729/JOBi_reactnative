@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
     alert_msg: {
-        top: -5,
+        top: -8,
         right: -10,
         position: 'absolute',
         fontSize: 11,
