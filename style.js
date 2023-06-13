@@ -14,8 +14,8 @@ export const css = StyleSheet.create({
         marginRight: 'auto',
         backgroundColor: '#2C92D2',
         fontFamily: 'Arial',
+        minHeight: '926rem',
         height: '100vh',
-        height: '926rem',
         position: 'relative',
     },
     cont_white_header: {
