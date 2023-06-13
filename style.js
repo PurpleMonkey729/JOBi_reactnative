@@ -20,7 +20,7 @@ export const css = StyleSheet.create({
     },
     cont_white_header: {
         width: 428,
-        paddingTop: 212,
+        paddingTop: 199,
         paddingBottom: 99,
         marginLeft: 'auto',
         marginRight: 'auto',

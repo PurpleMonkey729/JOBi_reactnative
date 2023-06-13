@@ -279,59 +279,61 @@ export default function WorkListPage(props) {
         },
     ];
     return (
-        <div className='cont_worklistpage'>
-            <View style={css.cont_white_header}>
-                <Header />
-                {
-                    !ready &&
-                    <View>
-                        <View style={styles.box_loader}>
-                            {array.map((item, index) =>
-                                <AnimCircle style={{ ...styles.circle, ...styles[item] }} delay={index * 200}>
-                                </AnimCircle>
+        <div className='cont_fixed'>
+            <div className='cont_worklistpage'>
+                <View style={css.cont_white_header}>
+                    <Header />
+                    {
+                        !ready &&
+                        <View>
+                            <View style={styles.box_loader}>
+                                {array.map((item, index) =>
+                                    <AnimCircle style={{ ...styles.circle, ...styles[item] }} delay={index * 200}>
+                                    </AnimCircle>
+                                )}
+                            </View>
+                            <Text style={styles.txt_en}>Loading</Text>
+                            <Text style={styles.txt_jp}>求人を読み込んでいます</Text>
+                        </View>
+                        ||
+                        ready &&
+                        <View style={styles.box}>
+                            {data.map(item =>
+                                <View style={styles.item}>
+                                    {
+                                        item.clock == 'red' &&
+                                        <View style={styles.box_time}>
+                                            <Image source={clock_red} style={styles.clock} />
+                                            <Text style={styles.time_red}>{item.time}</Text>
+                                        </View> ||
+                                        item.clock == 'blue' &&
+                                        <View style={styles.box_time}>
+                                            <Image source={clock_blue} style={styles.clock} />
+                                            <Text style={styles.time}>{item.time}</Text>
+                                        </View>
+                                    }
+                                    <Image source={photo_worker} style={styles.photo} />
+                                    <Text style={styles.txt}>{item.txt}</Text>
+                                    <View style={styles.box_date}>
+                                        <Text style={styles.date}>{item.date}</Text>
+                                        <Text style={styles.price}>{item.price}</Text>
+                                    </View>
+                                    <View style={styles.box_bottom}>
+                                        <View style={styles.city}>{item.city}</View>
+                                        {
+                                            item.like == 'yes' && <Image source={heart_yes} style={styles.heart} /> ||
+                                            item.like == 'no' && <Image source={heart_no} style={styles.heart} />
+                                        }
+                                        <Image source={img_distance} style={styles.img_distance} />
+                                        <Text style={styles.distance}>{item.distance}</Text>
+                                    </View>
+                                </View>
                             )}
                         </View>
-                        <Text style={styles.txt_en}>Loading</Text>
-                        <Text style={styles.txt_jp}>求人を読み込んでいます</Text>
-                    </View>
-                    ||
-                    ready &&
-                    <View style={styles.box}>
-                        {data.map(item =>
-                            <View style={styles.item}>
-                                {
-                                    item.clock == 'red' &&
-                                    <View style={styles.box_time}>
-                                        <Image source={clock_red} style={styles.clock} />
-                                        <Text style={styles.time_red}>{item.time}</Text>
-                                    </View> ||
-                                    item.clock == 'blue' &&
-                                    <View style={styles.box_time}>
-                                        <Image source={clock_blue} style={styles.clock} />
-                                        <Text style={styles.time}>{item.time}</Text>
-                                    </View>
-                                }
-                                <Image source={photo_worker} style={styles.photo} />
-                                <Text style={styles.txt}>{item.txt}</Text>
-                                <View style={styles.box_date}>
-                                    <Text style={styles.date}>{item.date}</Text>
-                                    <Text style={styles.price}>{item.price}</Text>
-                                </View>
-                                <View style={styles.box_bottom}>
-                                    <View style={styles.city}>{item.city}</View>
-                                    {
-                                        item.like == 'yes' && <Image source={heart_yes} style={styles.heart} /> ||
-                                        item.like == 'no' && <Image source={heart_no} style={styles.heart} />
-                                    }
-                                    <Image source={img_distance} style={styles.img_distance} />
-                                    <Text style={styles.distance}>{item.distance}</Text>
-                                </View>
-                            </View>
-                        )}
-                    </View>
-                }
-                <Footer num={1} />
-            </View>
+                    }
+                    <Footer num={1} />
+                </View>
+            </div>
         </div>
     );
 }
