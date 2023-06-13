@@ -21,7 +21,7 @@ export const css = StyleSheet.create({
     cont_white_header: {
         width: 428,
         paddingTop: 212,
-        paddingBottom: 84,
+        paddingBottom: 99,
         marginLeft: 'auto',
         marginRight: 'auto',
         fontFamily: 'Arial',
@@ -31,7 +31,7 @@ export const css = StyleSheet.create({
     },
     cont_white: {
         width: 428,
-        paddingBottom: 84,
+        paddingBottom: 99,
         marginLeft: 'auto',
         marginRight: 'auto',
         fontFamily: 'Arial',

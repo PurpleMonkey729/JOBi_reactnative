@@ -13,9 +13,9 @@ const styles = StyleSheet.create({
     footer: {
         position: 'fixed',
         bottom: 0,
-        backgroundColor: '#2C92D2',
+        backgroundColor: '#332180',
         width: 428,
-        height: 84,
+        height: 99,
         flexDirection: 'row',
         justifyContent: 'space-between',
         paddingTop: 12,
@@ -24,10 +24,11 @@ const styles = StyleSheet.create({
     },
     item: {
         alignItems: 'center',
+        position: 'relative',
     },
     img: {
-        width: 16,
-        height: 16,
+        width: 45,
+        height: 35,
         opacity: .3,
     },
     img_active: {
@@ -38,7 +39,21 @@ const styles = StyleSheet.create({
         fontSize: 11,
         color: 'white',
         fontWeight: 'bold',
-    }
+    },
+    alert_msg: {
+        top: -5,
+        right: -10,
+        position: 'absolute',
+        fontSize: 11,
+        color: 'white',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: 20,
+        height: 20,
+        borderRadius: 20,
+        backgroundColor: '#FA8673',
+    },
 });
 
 export default function Footer(props) {
@@ -73,6 +88,7 @@ export default function Footer(props) {
                 <View style={styles.item}>
                     <Image source={icon_user} style={[styles.img, props.num == 4 && styles.img_active]} />
                     <Text style={styles.txt}>メッセージ</Text>
+                    <Text style={styles.alert_msg}>29</Text>
                 </View>
             </div>
             <div className={"footer_item"} onClick={() => clickMe(4)}>
