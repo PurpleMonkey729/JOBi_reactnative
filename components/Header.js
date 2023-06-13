@@ -1,25 +1,25 @@
 import { StyleSheet, Text, View, Image, TextInput, Picker } from 'react-native';
 import { useRef, useState, useEffect } from 'react';
 
-import icon_search from '../assets/icon-search.png';
-import img_right from '../assets/right.png';
+import icon_search from '../assets/search2.png';
+import img_right from '../assets/down.png';
 
 const styles = StyleSheet.create({
     header: {
         width: 428,
-        height: 212,
+        height: 196,
         position: 'fixed',
         top: 0,
         paddingLeft: 16,
         paddingRight: 16,
-        paddingTop: 10,
+        paddingTop: 36,
         backgroundColor: 'white',
         boxShadow: '0 10px 10px -10px #000',
         zIndex: 10,
     },
     dsc: {
         fontSize: 15,
-        color: '#172B4D',
+        color: '#332180',
     },
     box_date: {
         marginTop: 3,
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     },
     item_date_today: {
         border: 'none',
-        backgroundColor: '#11CDEF',
+        backgroundColor: '#FFE400',
     },
     item_date_first: {
         color: '#172B4D',
@@ -54,7 +54,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        marginTop: 17,
     },
     box_input: {
         display: 'flex',
@@ -70,35 +69,35 @@ const styles = StyleSheet.create({
         height: 16,
     },
     input: {
-        color: '#2699FB',
-        fontSize: 18,
+        color: '#332180',
+        fontSize: 14,
         width: 193,
-        height: 60,
+        height: 32,
         paddingLeft: 50,
-        borderRadius: 8,
-        border: '1px solid #2699FB',
+        borderRadius: 9,
+        border: '1px solid #332180',
     },
     ttl_select: {
-        color: '#2699FB',
+        color: '#332180',
         fontSize: 13,
         fontWeight: 'bold',
     },
     select: {
-        color: '#2699FB',
-        fontSize: 18,
+        color: '#332180',
+        fontSize: 14,
         width: 127,
-        height: 60,
+        height: 32,
         paddingLeft: 19,
         borderRadius: 8,
-        border: '1px solid #2699FB',
+        border: '1px solid #332180',
     },
     menu_city: {
         position: 'absolute',
-        top: 60,
+        top: 50,
     },
     menu_filter: {
         position: 'absolute',
-        top: 60,
+        top: 50,
         right: 0,
     },
     menu_item: {
@@ -110,7 +109,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         paddingLeft: 19,
-        color: '#2699FB',
+        color: '#332180',
         fontSize: 14,
         fontWeight: 'bold',
         position: 'relative',
@@ -121,13 +120,13 @@ const styles = StyleSheet.create({
         right: 15,
         width: 10,
         height: 10,
+        rotate: '-90deg',
     },
     img_arrow_down: {
         position: 'absolute',
         right: 15,
         width: 10,
         height: 10,
-        rotate: '90deg',
     }
 });
 
@@ -199,6 +198,7 @@ export default function Header(props) {
                 <View style={styles.box_input}>
                     <Image source={icon_search} style={styles.icon} />
                     <TextInput style={styles.input} value={city} onFocus={showCityMenu} />
+                    <Image source={img_right} style={styles.img_arrow_down} />
                     {isShowCityMenu && <View style={styles.menu_city}>
                         {cites.map(item => <View
                             style={styles.menu_item}
