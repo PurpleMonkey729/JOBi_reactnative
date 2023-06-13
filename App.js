@@ -50,7 +50,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="GetQRPage"
+        initialRouteName="WorkListPage"
         screenOptions={{
           headerShown: false
         }}>
