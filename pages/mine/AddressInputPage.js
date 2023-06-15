@@ -61,78 +61,11 @@ const styles = StyleSheet.create({
         marginTop: '45rem',
         backgroundColor: '#FA8673',
     },
-    bg_modal: {
-        backgroundColor: '#B5B5B5aa',
-        position: 'fixed',
-        width: '100vw',
-        height: '100vh',
-        top: '0rem',
-        left: '0rem',
-        zIndex: 999,
-    },
-    modal: {
-        marginTop: '289rem',
-        marginLeft: 'auto',
-        marginRight: 'auto',
-        width: '270rem',
-        borderRadius: '14rem',
-        backgroundColor: '#F2F2F2dd',
-    },
-    txt_modal: {
-        color: '#000',
-        fontWeight: 'bold',
-        fontSize: '17rem',
-        textAlign: 'center',
-        marginTop: '19rem',
-        marginBottom: '19rem',
-    },
-    box_modal_btn: {
-        width: '100%',
-        height: '100%',
-        borderTopColor: '#888',
-        borderTopWidth: '1rem',
-        display: 'flex',
-        flexDirection: 'row',
-        height: '44rem',
-    },
-    btn_modal_left: {
-        width: '50%',
-        height: '100%',
-        color: '#007AFF',
-        fontSize: '17rem',
-        borderRightColor: '#888',
-        borderRightWidth: '1rem',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    btn_modal_right: {
-        width: '50%',
-        height: '100%',
-        color: '#007AFF',
-        fontSize: '17rem',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
 });
 
 export default function ContactPage(props) {
-    const [isShowModal, setShowModal] = useState(false);
     return (
         <View style={css.cont_white}>
-            {
-                isShowModal &&
-                <View style={styles.bg_modal}>
-                    <View style={styles.modal}>
-                        <Text style={styles.txt_modal}>変更します。<br />よろしいですか？</Text>
-                        <View style={styles.box_modal_btn}>
-                            <Text style={styles.btn_modal_left} onStartShouldSetResponder={()=>setShowModal(false)}>もどる</Text>
-                            <Text style={styles.btn_modal_right}>OK</Text>
-                        </View>
-                    </View>
-                </View>
-            }
             <View style={styles.header}>
                 <Pressable>
                     <Image source={btn_return} style={styles.btn_return} />

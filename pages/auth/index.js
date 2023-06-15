@@ -7,43 +7,43 @@ import img_mid from '../../assets/img-auth-index.png';
 
 const styles = StyleSheet.create({
     img_logo: {
-        width: 355,
-        height: 141,
+        width: '355rem',
+        height: '141rem',
         marginLeft: 'auto',
         marginRight: 'auto',
-        marginTop: 47,
+        marginTop: '47rem',
     },
     img_mid: {
-        width: 336,
-        height: 323,
+        width: '336rem',
+        height: '323rem',
         marginLeft: 'auto',
         marginRight: 'auto',
-        marginTop: 34,
+        marginTop: '34rem',
     },
     ttl: {
-        marginTop: 40,
+        marginTop: '40rem',
     },
     dsc: {
         marginTop: 13
     },
     btn_yellow: {
-        marginTop: 43,
+        marginTop: '43rem',
     },
     btn_login: {
-        width: 300,
-        height: 52,
+        width: '300rem',
+        height: '52rem',
         color: 'white',
-        fontSize: 16,
+        fontSize: '16rem',
         backgroundColor: '#2C92D2',
         border: '2px solid white',
-        borderRadius: 5,
+        borderRadius: '5rem',
         fontWeight: 'bold',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         marginLeft: 'auto',
         marginRight: 'auto',
-        marginTop: 26,
+        marginTop: '26rem',
     },
 });
 

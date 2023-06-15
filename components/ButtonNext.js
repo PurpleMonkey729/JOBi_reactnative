@@ -6,16 +6,16 @@ const styles = StyleSheet.create({
     cont: {
         display: 'flex',
         alignItems: 'center',
-        width: 65,
+        width: '65rem',
     },
     btn_next: {
-        width: 65,
-        height: 65,
+        width: '65rem',
+        height: '65rem',
     },
     txt: {
         color: 'white',
-        fontSize: 14,
-        marginTop: 12,
+        fontSize: '14rem',
+        marginTop: '12rem',
     }
 });
 

@@ -8,35 +8,35 @@ import btn_return from '../../assets/left.png';
 
 const styles = StyleSheet.create({
     btn_return: {
-        width: 12,
-        height: 20,
+        width: '12rem',
+        height: '20rem',
         position: 'absolute',
-        top: 30,
-        left: 20,
+        top: '30rem',
+        left: '20rem',
     },
     img: {
-        width: 428,
-        height: 375,
+        width: '428rem',
+        height: '375rem',
     },
     ttl: {
-        fontSize: 28,
+        fontSize: '28rem',
         fontWeight: 'bold',
-        marginTop: 20,
-        marginLeft: 15,
-        marginRight: 15,
+        marginTop: '20rem',
+        marginLeft: '15rem',
+        marginRight: '15rem',
     },
     txt: {
-        marginTop: 20,
-        marginLeft: 15,
-        marginRight: 15,
-        fontSize: 16,
+        marginTop: '20rem',
+        marginLeft: '15rem',
+        marginRight: '15rem',
+        fontSize: '16rem',
     },
     btn_camera: {
-        width: 77,
-        height: 77,
+        width: '77rem',
+        height: '77rem',
         marginLeft: 'auto',
         marginRight: 'auto',
-        marginTop: 250,
+        marginTop: '250rem',
     }
 });
 

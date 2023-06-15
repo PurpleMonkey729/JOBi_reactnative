@@ -8,31 +8,31 @@ import img_file from '../../assets/file.png';
 
 const styles = StyleSheet.create({
     img: {
-        width: 64,
-        height: 73,
+        width: '64rem',
+        height: '73rem',
         marginLeft: 'auto',
         marginRight: 'auto',
-        marginTop: 182,
+        marginTop: '182rem',
     },
     txt: {
         color: '#00000044',
-        fontSize: 15,
-        marginTop: 30,
+        fontSize: '15rem',
+        marginTop: '30rem',
         textAlign: 'center',
     },
     btn: {
-        marginTop: 29,
+        marginTop: '29rem',
         marginLeft: 'auto',
         marginRight: 'auto',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         color: '#fff',
-        fontSize: 15,
+        fontSize: '15rem',
         backgroundColor: '#2C92D2',
-        width: 197,
-        height: 48,
-        borderRadius: 6,
+        width: '197rem',
+        height: '48rem',
+        borderRadius: '6rem',
     }
 });
 
