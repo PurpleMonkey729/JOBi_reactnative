@@ -54,6 +54,9 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
+        position: 'absolute',
+        bottom: 0,
+        width: '396rem',
     },
     box_input: {
         display: 'flex',
