@@ -14,11 +14,11 @@ const AnimCircle = props => {
             Animated.sequence([
                 Animated.timing(zoom, {
                     toValue: 1.75,
-                    duration: 900,
+                    duration: '900rem',
                 }),
                 Animated.timing(zoom, {
-                    toValue: 1,
-                    duration: 900,
+                    toValue: '1rem',
+                    duration: '900rem',
                 })
             ])
         ).start();
@@ -38,67 +38,67 @@ const AnimCircle = props => {
 
 const styles = StyleSheet.create({
     box: {
-        marginTop: 158,
+        marginTop: '158rem',
         marginLeft: 'auto',
         marginRight: 'auto',
         position: 'relative',
-        width: 100,
-        height: 100,
+        width: '100rem',
+        height: '100rem',
     },
     circle: {
         position: 'absolute',
-        width: 12,
-        height: 12,
+        width: '12rem',
+        height: '12rem',
         backgroundColor: '#2C92D2',
         borderRadius: '50%',
     },
     circle0: {
-        top: 0,
-        left: 37,
+        top: '0rem',
+        left: '37rem',
     },
     circle1: {
-        top: 10,
-        left: 63,
+        top: '10rem',
+        left: '63rem',
     },
     circle2: {
-        top: 30,
-        left: 79,
+        top: '30rem',
+        left: '79rem',
     },
     circle3: {
-        top: 53,
-        left: 73,
+        top: '53rem',
+        left: '73rem',
     },
     circle4: {
-        top: 70,
-        left: 55,
+        top: '70rem',
+        left: '55rem',
     },
     circle5: {
-        top: 73,
-        left: 30,
+        top: '73rem',
+        left: '30rem',
     },
     circle6: {
-        top: 60,
-        left: 8,
+        top: '60rem',
+        left: '8rem',
     },
     circle7: {
-        top: 35,
-        left: 0,
+        top: '35rem',
+        left: '0rem',
     },
     circle8: {
-        top: 10,
-        left: 10,
+        top: '10rem',
+        left: '10rem',
     },
     txt_en: {
-        fontSize: 28,
+        fontSize: '28rem',
         color: '#2C92D2',
-        marginTop: 88,
+        marginTop: '88rem',
         textAlign: 'center',
-        fontWeight: 600,
+        fontWeight: '600rem',
     },
     txt_jp: {
-        marginTop: 7,
+        marginTop: '7rem',
         textAlign: 'center',
-        fontSize: 15,
+        fontSize: '15rem',
     }
 });
 

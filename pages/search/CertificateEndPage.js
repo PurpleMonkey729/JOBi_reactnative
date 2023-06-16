@@ -7,25 +7,25 @@ import btn_return from '../../assets/left.png';
 
 const styles = StyleSheet.create({
     btn_return: {
-        width: 12,
-        height: 20,
-        marginTop: 35,
-        marginLeft: 21,
+        width: '12rem',
+        height: '20rem',
+        marginTop: '35rem',
+        marginLeft: '21rem',
     },
     ttl: {
-        fontSize: 22,
+        fontSize: '22rem',
         color: '#172B4D',
         textAlign: 'center',
-        marginTop: 23,
-        marginBottom: 36,
+        marginTop: '23rem',
+        marginBottom: '36rem',
     },
     txt: {
-        fontSize: 15,
+        fontSize: '15rem',
         lineHeight: '2.5',
-        marginLeft: 37,
+        marginLeft: '37rem',
     },
     email: {
-        marginTop: 29,
+        marginTop: '29rem',
         color: '#707070',
         textAlign: 'center',
     }

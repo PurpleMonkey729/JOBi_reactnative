@@ -10,28 +10,28 @@ import btn_next from '../../assets/btn-next.png';
 
 const styles = StyleSheet.create({
     img_logo: {
-        width: 355,
-        height: 141,
+        width: '355rem',
+        height: '141rem',
         marginLeft: 'auto',
         marginRight: 'auto',
-        marginTop: 47,
+        marginTop: '47rem',
     },
     ttl: {
-        marginTop: 47,
+        marginTop: '47rem',
     },
     dsc: {
-        marginTop: 13,
+        marginTop: '13rem',
     },
     ttl_input: {
         color: 'white',
-        marginTop: 41,
-        marginLeft: 64,
+        marginTop: '41rem',
+        marginLeft: '64rem',
         fontSize: 15.5,
-        marginBottom: 9,
+        marginBottom: '9rem',
     },
     btn_next: {
-        marginTop: -20,
-        marginLeft: 327,
+        marginTop: '-20rem',
+        marginLeft: '327rem',
     },
 });
 

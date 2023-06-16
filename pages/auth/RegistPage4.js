@@ -13,39 +13,39 @@ import btn_back from '../../assets/btn-back.png';
 
 const styles = StyleSheet.create({
     header: {
-        marginTop: 38,
+        marginTop: '38rem',
         display: 'flex',
         flexDirection: 'row',
     },
     btn_back: {
-        marginLeft: 39,
-        width: 16,
-        height: 16,
+        marginLeft: '39rem',
+        width: '16rem',
+        height: '16rem',
     },
     header_ttl: {
-        marginLeft: 128,
+        marginLeft: '128rem',
         color: 'white',
         fontSize: 15.5,
     },
     img_logo: {
-        width: 355,
-        height: 141,
+        width: '355rem',
+        height: '141rem',
         marginLeft: 'auto',
         marginRight: 'auto',
-        marginTop: 47,
+        marginTop: '47rem',
     },
     ttl: {
-        marginTop: 30,
+        marginTop: '30rem',
     },
     sub_ttl: {
         fontSize: 15.5,
         color: 'white',
-        paddingLeft: 67,
-        marginTop: 20,
+        paddingLeft: '67rem',
+        marginTop: '20rem',
         marginBottom: 9
     },
     box: {
-        width: 300,
+        width: '300rem',
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
@@ -54,57 +54,57 @@ const styles = StyleSheet.create({
         alignItems: 'flex-end',
     },
     input: {
-        width: 145,
-        marginLeft: 0,
-        marginRight: 0,
+        width: '145rem',
+        marginLeft: '0rem',
+        marginRight: '0rem',
     },
     select: {
         border: 'none',
-        width: 72,
-        marginLeft: 0,
-        marginRight: 0,
-        paddingLeft: 10,
+        width: '72rem',
+        marginLeft: '0rem',
+        marginRight: '0rem',
+        paddingLeft: '10rem',
     },
     box_gender: {
         display: 'flex',
         flexDirection: 'row',
-        marginLeft: 64,
+        marginLeft: '64rem',
     },
     checkbox: {
-        width: 30,
-        height: 30,
+        width: '30rem',
+        height: '30rem',
         backgroundColor: 'blue'
     },
     text_label: {
-        fontSize: 14,
+        fontSize: '14rem',
         color: 'white',
     },
     text_yellow: {
         color: '#E1FA08',
-        fontSize: 12,
-        marginLeft: 67,
+        fontSize: '12rem',
+        marginLeft: '67rem',
     },
     photo_box: {
-        width: 104,
-        marginTop: -75,
-        marginLeft: 248,
+        width: '104rem',
+        marginTop: '-75rem',
+        marginLeft: '248rem',
         position: 'relative',
     },
     photo: {
-        width: 104,
-        height: 104,
+        width: '104rem',
+        height: '104rem',
     },
     btn_camera: {
-        width: 40,
-        height: 40,
+        width: '40rem',
+        height: '40rem',
         position: 'absolute',
-        right: -5,
-        bottom: -5,
+        right: '-5rem',
+        bottom: '-5rem',
     },
     btn_next: {
-        marginTop: 27,
-        marginLeft: 327,
-        marginBottom: 49,
+        marginTop: '27rem',
+        marginLeft: '327rem',
+        marginBottom: '49rem',
     },
     input_ok: {
         backgroundColor: 'transparent',
@@ -115,13 +115,13 @@ const styles = StyleSheet.create({
     },
     text_agree: {
         color: 'white',
-        fontSize: 12,
-        marginTop: 35,
-        marginLeft: 67,
+        fontSize: '12rem',
+        marginTop: '35rem',
+        marginLeft: '67rem',
     },
     btn_yellow: {
-        marginTop: 35,
-        marginBottom: 50,
+        marginTop: '35rem',
+        marginBottom: '50rem',
     }
 });
 
