@@ -40,6 +40,7 @@ import TransferAccountPage from './pages/mine/TransferAccountPage';
 import ContactPage from './pages/mine/ContactPage';
 import MySkillPage from './pages/mine/MySkillPage';
 import MyPage from './pages/mine/MyPage';
+import AddressInputPage from './pages/mine/AddressInputPage';
 
 import FavouriteShopPage from './pages/favourite/FavouriteShopPage';
 import FavouriteShopDetailPage from './pages/favourite/FavouriteShopDetailPage';
@@ -50,7 +51,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="WorkListPage"
+        initialRouteName="AddressInputPage"
         screenOptions={{
           headerShown: false
         }}>
@@ -79,6 +80,7 @@ export default function App() {
         <Stack.Screen name="PastHirePage" component={PastHirePage} />
         <Stack.Screen name="WorkQRPage" component={WorkQRPage} />
         <Stack.Screen name="GetQRPage" component={GetQRPage} />
+        <Stack.Screen name="AddressInputPage" component={AddressInputPage} />
         <Stack.Screen name="SalaryFinalConformPage" component={SalaryFinalConformPage} />
         <Stack.Screen name="ReviewInputPage" component={ReviewInputPage} />
         <Stack.Screen name="WorkEndPage" component={WorkEndPage} />
