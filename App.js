@@ -51,7 +51,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="WorkListPage"
+        initialRouteName="LoadingPage"
         screenOptions={{
           headerShown: false
         }}>
