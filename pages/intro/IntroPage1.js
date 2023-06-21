@@ -5,7 +5,7 @@ import btn_next from '../../assets/btn-next.png'
 export default function IntroPage1(props) {
   return (
     <Main 
-        page_num = "1"
+        page_num = {1}
         bg = {bg}
         ttl = "好きな時間に働こう"
         txt1 = "好きな職種を履歴書・面接一切なし！"

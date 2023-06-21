@@ -14,11 +14,11 @@ const AnimCircle = props => {
             Animated.sequence([
                 Animated.timing(zoom, {
                     toValue: 1.75,
-                    duration: '900rem',
+                    duration: 900,
                 }),
                 Animated.timing(zoom, {
-                    toValue: '1rem',
-                    duration: '900rem',
+                    toValue: 1,
+                    duration: 900,
                 })
             ])
         ).start();

@@ -12,7 +12,7 @@ export const css = StyleSheet.create({
         width: '428rem',
         marginLeft: 'auto',
         marginRight: 'auto',
-        backgroundColor: '#2C92D2',
+        backgroundColor: '#E1F0FB',
         fontFamily: 'Arial',
         minHeight: '926rem',
         height: '100vh',

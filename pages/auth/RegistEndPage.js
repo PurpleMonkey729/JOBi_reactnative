@@ -17,13 +17,13 @@ const styles = StyleSheet.create({
     name: {
         fontSize: '24rem',
         textAlign: 'center',
-        marginTop: '51rem',
-        color: 'white',
+        marginTop: '40rem',
+        color: '#404040',
     },
     photo: {
         width: '104rem',
         height: '104rem',
-        marginTop: '31rem',
+        marginTop: '14rem',
         marginLeft: '248rem',
         marginLeft: 'auto',
         marginRight: 'auto',
@@ -31,17 +31,19 @@ const styles = StyleSheet.create({
     text_small: {
         fontSize: 15.5,
         textAlign: 'center',
-        marginTop: '42rem',
-        color: 'white',
+        marginTop: '29rem',
+        color: '#404040',
     },
     text_big: {
         fontSize: '28rem',
         textAlign: 'center',
         marginTop: '6rem',
-        color: '#E1FA08',
+        color: '#5D4AFF',
     },
     btn_yellow: {
-        marginTop: '41rem',
+        marginTop: '37rem',
+        backgroundColor: '#332180',
+        height: '65rem',
     },
     img_end: {
         marginTop: '35rem',

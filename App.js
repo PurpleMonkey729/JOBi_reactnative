@@ -51,7 +51,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="LoadingPage"
+        initialRouteName="RegistEndPage"
         screenOptions={{
           headerShown: false
         }}>
