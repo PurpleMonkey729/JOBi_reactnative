@@ -28,24 +28,33 @@ const styles = StyleSheet.create({
     btn_skip: {
         marginLeft: '99rem',
         fontSize: '15rem',
-        color: 'white',
+        color: '#000000',
     },
     txt_box: {
         marginTop: '471rem',
         marginLeft: '53rem',
+        position: 'relative',
+    },
+    ttl_en: {
+        position: 'absolute',
+        top: '-30rem',
+        left: '80rem',
+        color: '#5D4AFF',
+        fontSize: '29rem',
+        fontWeight: 'bold',
     },
     ttl: {
         marginBottom: '16rem',
-        color: '#E1FA08',
+        color: '#5D4AFF',
         fontSize: '37rem',
+        fontWeight: 'bold',
     },
     txt: {
-        color: 'white',
+        color: '#2C2C2C',
         fontSize: '14rem',
     },
     btn_next: {
         marginTop: '40rem',
-        marginLeft: '335rem',
     },
     btn: {
         marginTop: '40rem',
@@ -73,11 +82,12 @@ export default function Main(props) {
                     <Text style={styles.btn_skip}>スキップ</Text>
                 </View>
                 <View style={styles.txt_box}>
+                    <Text style={styles.ttl_en}>Let’s WORK!</Text>
                     <Text style={styles.ttl}>{props.ttl}</Text>
                     <Text style={styles.txt}>{props.txt1}</Text>
                     <Text style={styles.txt}>{props.txt2}</Text>
                 </View>
-                <View style={styles.btn_next}><ButtonNext img={props.btn_next} txt={props.page_num + '/3'} onStartShouldSetResponder={()=>goNext(props.page_num)}/></View>
+                <View style={styles.btn_next}><ButtonNext img={props.btn_next} num={props.page_num} onStartShouldSetResponder={()=>goNext(props.page_num)}/></View>
             </ImageBackground>
         </View >
     );

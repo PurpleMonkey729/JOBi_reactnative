@@ -22,9 +22,16 @@ const styles = StyleSheet.create({
     },
     ttl: {
         marginTop: '40rem',
+        color: '#5D4AFF',
+        textAlign: 'center',
+        fontSize: '28rem',
+        fontWeight: 'bold',
     },
     dsc: {
-        marginTop: 13
+        marginTop: '13rem',
+        color: '#5D4AFF',
+        textAlign: 'center',
+        fontSize: '16rem',
     },
     btn_yellow: {
         marginTop: '43rem',
@@ -34,7 +41,7 @@ const styles = StyleSheet.create({
         height: '52rem',
         color: 'white',
         fontSize: '16rem',
-        backgroundColor: '#2C92D2',
+        backgroundColor: '#332180',
         border: '2px solid white',
         borderRadius: '5rem',
         fontWeight: 'bold',
@@ -52,8 +59,8 @@ export default function AuthIndexPage(props) {
         <View style={css.cont_blue}>
             <Image source={img_logo} style={styles.img_logo} />
             <Image source={img_mid} style={styles.img_mid} />
-            <Text style={[css.ttl, styles.ttl]}>JOBiへようこそ！</Text>
-            <Text style={[css.dsc, styles.dsc]}>登録してJOBiをはじめよう！</Text>
+            <Text style={styles.ttl}>JOBiへようこそ！</Text>
+            <Text style={styles.dsc}>登録してJOBiをはじめよう！</Text>
             <View style={[css.btn_yellow, styles.btn_yellow]}>新規登録</View>
             <View style={styles.btn_login}>ログイン</View>
         </View >
