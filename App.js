@@ -39,6 +39,7 @@ import GetQRPage from './pages/work/GetQRPage';
 import TransferAccountPage from './pages/mine/TransferAccountPage';
 import ContactPage from './pages/mine/ContactPage';
 import MySkillPage from './pages/mine/MySkillPage';
+import MyFixedSkillPage from './pages/mine/MyFixedSkillPage';
 import MyPage from './pages/mine/MyPage';
 import AddressInputPage from './pages/mine/AddressInputPage';
 
@@ -51,7 +52,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="RegistEndPage"
+        initialRouteName="MyFixedSkillPage"
         screenOptions={{
           headerShown: false
         }}>
@@ -87,6 +88,7 @@ export default function App() {
         <Stack.Screen name="TransferAccountPage" component={TransferAccountPage} />
         <Stack.Screen name="ContactPage" component={ContactPage} />
         <Stack.Screen name="MySkillPage" component={MySkillPage} />
+        <Stack.Screen name="MyFixedSkillPage" component={MyFixedSkillPage} />
         <Stack.Screen name="MyPage" component={MyPage} />
         <Stack.Screen name="FavouriteShopPage" component={FavouriteShopPage} />
         <Stack.Screen name="FavouriteShopDetailPage" component={FavouriteShopDetailPage} />
